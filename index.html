@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<title>Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+
+@font-face {
+  font-family: Lulo;
+  src: url('Lulo.otf');
+}
+
+@font-face {
+  font-family: Futura;
+  src: url('FuturaLT.ttf');
+}
+
+h1 {font-family: Lulo;
+    font-size: 24px;
+}
+
+h1.title {font-family: Lulo;
+    position:fixed;
+    font-size: 25px;
+	margin-left: 0%;
+	margin-top:20px;
+	color: white;
+    -webkit-animation: slide-top 1s, fadein 1s;
+	-webkit-animation: slide-top 1s, fadein 1s; 
+       -moz-animation: slide-top 1s, fadein 1s; 
+        -ms-animation: slide-top 1s, fadein 1s; 
+         -o-animation: slide-top 1s, fadein 1s;
+            animation: slide-top 1s, fadein 1s;
+}
+
+h2 {font-family: Lulo;
+    font-size: 13px;
+	color:white;}
+	
+h2.under {font-family: Lulo;
+    font-size: 13px;
+	margin-left: 0%;
+	margin-top: 58px;
+	color: #008080;
+
+	-webkit-animation: slide-right 0.8s, fadein 1s, precolor 0.5s, colorfade 2s;
+	-webkit-animation: slide-right 0.8s, fadein 1s, precolor 0.5s, colorfade 2s; 
+       -moz-animation: slide-right 0.8s, fadein 1s, precolor 0.5s, colorfade 2s; 
+        -ms-animation: slide-right 0.8s, fadein 1s, precolor 0.5s, colorfade 2s; 
+         -o-animation: slide-right 0.8s, fadein 1s, precolor 0.5s, colorfade 2s;
+            animation: slide-right 0.8s, fadein 1s, precolor 0.5s, colorfade 2s;
+			animation-delay: 0s,0s,0s,0.5s;
+}  
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.btn {
+  background-color: white;
+    width: 140px;
+    color: #008080;
+	-o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2;
+    border: none;
+	font-family: Lulo;
+	
+	font-size: 13px;
+	text-decoration: none;
+	
+}
+.dropbtn {
+    background-color: white;
+    color: #008080;
+    width:140px;
+    border: none;
+	font-family: Lulo;
+	font-size: 13px;
+	text-decoration: none;
+	-o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2;
+
+}
+.dropdown-content {
+    display: none;
+	width: 140px;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+	font-family:Lulo;
+	font-size: 13px;
+	text-align: center;
+	-o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2;
+}
+
+.dropdown-content a {
+    color: #008080;
+    padding: 8px 11.5px;
+    text-decoration: none;
+    display: block;
+	-o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2;
+}
+
+.dropdown-content a:hover {background-color: #EB5707; color:white}
+.btn:hover {background-color: #EB5707; color:white}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.wrapper{
+font-size: 0;
+position: static;
+
+margin: 0 auto;
+top: -2px;
+overflow: hidden;
+width:1000px;
+height:600px;
+}
+.menu{
+position: absolute;
+top: 18%;
+width:420px;
+margin-left: 580px;
+height:90px;
+}
+
+.box{
+position: absolute;
+top: 18%;
+width:1000px;
+margin-left: 0px;
+height:500px;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #EB5707; color: white};
+}
+
+<!-- SLIDE RIGHT -->
+
+@keyframes slide-right {
+    from { margin-left: -40%; }
+    to   { margin-left: 0; }
+}
+
+@-moz-keyframes slide-right {
+    from { margin-left: -40%; }
+    to   { margin-left: 0; }
+}
+
+@-webkit-keyframes slide-right {
+    from { margin-left: -40%; }
+    to   { margin-left: 0; }
+}
+
+@-ms-keyframes slide-right {
+    from { margin-left: -40%; }
+    to   { margin-left: 0; }
+}
+
+@-o-keyframes slide-right {
+    from { margin-left: -40%; }
+    to   { margin-left: 0; }
+}
+
+<!-- SLIDE TOP -->
+
+@keyframes slide-top {
+    from { margin-top: 50px; }
+    to   { margin-top: 20px; }
+}
+
+@-moz-keyframes slide-top {
+    from { margin-top: 50px; }
+    to   { margin-top: 20px; }
+}
+
+@-webkit-keyframes slide-top {
+    from { margin-top: 50px; }
+    to   { margin-top: 20px; }
+}
+
+@-ms-keyframes slide-top {
+    from { margin-top: 50px; }
+    to   { margin-top: 20px; }
+}
+
+@-o-keyframes slide-top {
+    from { margin-top: 50px; }
+    to   { margin-top: 20px; }
+}
+
+<!-- FADE -->
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+<!-- COLOR -->
+
+@keyframes colorfade {
+    from { color: #ffffff; }
+    to   { color: #008080; }
+}
+
+@-moz-keyframes colorfade {
+    from { color: #ffffff; }
+    to   { color: #008080; }
+}
+
+@-webkit-keyframes colorfade {
+    from { color: #ffffff; }
+    to   { color: #008080; }
+}
+
+@-ms-keyframes colorfade {
+    from { color: #ffffff; }
+    to   { color: #008080; }
+}
+
+@-o-keyframes colorfade {
+    from { color: #ffffff; }
+    to   { color: #008080; }
+}
+
+<!-- COLOR LINE -->
+
+@keyframes colorfadeline {
+    from { background-color: #ffffff; }
+    to   { background-color: #EB5707; }
+}
+
+@-webkit-keyframes colorfadeline {
+    from { background-color: #ffffff; }
+    to   { background-color: #EB5707; }
+}
+
+<!-- PRE-COLOR-->
+
+@keyframes precolor {
+    from { color: #ffffff; }
+    to   { color: #ffffff; }
+}
+
+@-moz-keyframes precolor {
+    from { color: #ffffff; }
+    to   { color: #ffffff; }
+}
+
+@-webkit-keyframes precolor {
+    from { color: #ffffff; }
+    to   { color: #ffffff; }
+}
+
+@-ms-keyframes precolor {
+    from { color: #ffffff; }
+    to   { color: #ffffff }
+}
+
+@-o-keyframes precolor {
+    from { color: #ffffff; }
+    to   { color: #ffffff }
+}
+
+p {
+   font-size:17px;
+   font-family:Futura;
+   color: #008080;
+   transform: scale(1, 0.9);
+   margin-top: 90px;
+   margin-left: 39px;
+   margin-right: 39px;
+   text-align: left;
+}
+body {
+    overflow: hidden;
+}
+
+.boxart{
+position: absolute;
+top: -30%;
+width:62px;
+margin-left: 520px;
+height:1200px;
+-ms-transform: rotate(-20deg); 
+-webkit-transform: rotate(-20deg); 
+transform: rotate(-20deg);
+
+}
+.boxart2{
+  -ms-transform: rotate(45deg); 
+-webkit-transform: rotate(45deg); 
+transform: rotate(45deg);
+width:98px;
+
+}
+
+#circle {
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      -webkit-border-radius: 400px;
+      -moz-border-radius: 400px;
+      border-radius: 400px;
+      background: #ABD1B5;
+	  position: absolute;
+	  margin-top: -80px;
+	  margin-left:400px;
+
+    }
+	
+#texturecircle{
+
+position: absolute;
+      width: 830px;
+      height: 830px;
+      -webkit-border-radius: 415px;
+      -moz-border-radius: 415px;
+      border-radius: 415px;
+
+	  position: absolute;
+	  margin-top: -95px;
+	  margin-left:385px;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAHklEQVQoU2P8////fwYiACPRCokwDKyEcVQhvhAAABcFCANhhsasAAAAAElFTkSuQmCC);
+}
+	
+#circledots {
+      position: absolute;
+      width: 1200px;
+      height: 1200px;
+      -webkit-border-radius: 600px;
+      -moz-border-radius: 600px;
+      border-radius: 600px;
+	  position: absolute;
+	  margin-top: -200px;
+	  margin-left:-800px;
+	  border-style: dashed;
+	  border-color: white;
+	  border-width: 10px;
+    }
+
+	#triangle-bottomright {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-bottom: 70px solid red;
+	border-left: 70px solid transparent;
+}
+
+.texture{
+position: absolute;
+top: 0%;
+width:500px;
+margin-left: -325px;
+height:800px;
+-ms-transform: rotate(-45deg); 
+-webkit-transform: rotate(-45deg); 
+transform: rotate(-45deg);
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAG0lEQVQYV2NkgIL/////Z2RkZARxwQQIUFEQABuQFAbCpRMyAAAAAElFTkSuQmCC);
+
+}
+
+			
+</style>
+
+<body bgcolor="#008080">
+<div class="wrapper" >
+<h1 class="title"><span style="display:inline-block; width:400px">ANDREI ARDELEAN</span></h1>
+<h2 class="under"><span style="background-color: white; display:inline-block; width:346px;"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp PERSONAL PAGE</span></h2>
+   <div id="circle"></div>
+   <div id="texturecircle"></div>
+   <div class="boxart" style ="background-color:#EB5707; animation: colorfadeline 3s">
+   </div>
+   <div class="boxart" style ="background-color:#EB5707; margin-left:606px; animation: colorfadeline 3s">
+   </div>
+   <div class="boxart boxart2" style ="background-color:#002626; margin-left:493px; opacity:0.9">
+   </div>
+   <div class="box" style ="background-color:white">
+    <p>I am a focused and passionate Computer Science student willing to learn, offering exceptional troubleshooting
+	skills and a talent for developing solutions to unusual and difficult problems. Through my high school and college years
+	I've obtained entry-level programming skills in C++ and Java, I have also gotten a grasp of Javascript and HTML by working 
+	on various web-app projects on my own. I also enjoy expressing my
+	artistic side, having worked as a freelance Graphic Designer for a short while, I have obtained skills in image
+	processing and visual design (Gimp 2, Adobe Photoshop), video editing is also a hobby of mine that
+	I have been practicing for a long time. Able to work well independently or as part of a development team,
+	I am currently looking forward to improving my programming skills and obtaining practical experience as an intern or as employee.</p>
+   </div>  
+   <div class="menu" >
+   <a href="index.html"><button class="btn">ABOUT</button></a>
+    <div class="dropdown">
+    <button class="dropbtn" >WORK</button>
+    <div class="dropdown-content">
+      <a href="developer.html">DEVELOPER</a>
+      <a href="designer.html" style="-o-transition:.2s;
+    -ms-transition:.4s;
+    -moz-transition:.4s;
+    -webkit-transition:.4s;
+    transition:.4;">DESIGNER</a>
+    </div>
+    </div>
+	<a href="contact.html"><button class="btn">CONTACT</button></a>
+	
+    </div>
+<!-- <a href="contact.html" class="btn">Contact</a> -->
+</div>
+
+
+<!-- Footer / About Section -->
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+ <script>
+  $(document).ready(function(){
+	$(document).keydown(function(event) {
+	    	    if (event.ctrlKey==true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109'  || event.which == '187'  || event.which == '189'  ) ) {
+         alert('disabling zooming'); 
+		event.preventDefault();
+		// 107 Num Key  +
+		//109 Num Key  -
+		//173 Min Key  hyphen/underscor Hey
+		// 61 Plus key  +/=
+	     }
+	});
+
+	$(window).bind('mousewheel DOMMouseScroll', function (event) {
+	       if (event.ctrlKey == true) {
+		   event.preventDefault();
+	       }
+	});
+});
+</script>
+</body>
+</html>
+
