@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="drawstuffstyle.css">
+        <script src="processing.min.js"></script>
+
+<script type="text/processing" data-processing-target="targetcanvas">
+void setup() {
+  size(649, 600);
+  frameRate(2);
+  frame.setResizable(true);
+}
+
+
+background(255,255,255);
+var r=0;
+var g=0;
+var b=0;
+var data = [];
+var mousex;
+var mousey;
+var thickness=2;
+var strokes = [];
+var painting = false;
+var counter=0;
+var x;
+var inc=0;
+var mouseout=0;
+var q=10;
+var pausex=0;
+var paint = function() {
+    background(255, 255, 255);  
+    for(var i=1;i<data.length;i++){
+        if (data[i-1].mousex && data[i].mousex) {
+		    strokeWeight(data[i].T);
+		    stroke(data[i].R, data[i].G, data[i].B);
+            line(data[i].mousex,data[i].mousey,data[i-1].mousex,data[i-1].mousey);
+			fill(0,0,0);
+			text(data.length,10,10);
+        }
+    };
+};
+
+mouseDragged = function(){
+    painting = true;
+    data.push({mousex: mouseX, mousey: mouseY, R:r, G:g, B:b, T:thickness});
+    paint();
+    counter++;
+};
+mouseReleased = function() {
+    x=counter;
+    counter=0;
+    if(painting) {
+        data.push({mousex: 0, mousey: 0});
+    }
+    painting = false;
+};
+
+mouseOut = function() { 
+data.push({mousex: 0, mousey: 0});
+mouseout=1;
+}
+
+function undo() {
+    painting = false;
+    if (data[data.length-1].mouseX || data[data.length-1].mouseY) {data.pop();}
+    else {
+        for(var j=0;j<=x;j++){data.pop();}
+        data.push({mousex: 0, mousey: 0});
+    }
+    paint();
+};
+function clear(){
+   data = [];
+   paint();
+   thickness=2;
+   q=10;
+}
+
+function thicknessx(inc){
+paint();
+if(inc){thickness=thickness+q;}
+else if(thickness-q){thickness=thickness-q;}
+stroke(224,224,224,210);
+strokeWeight(thickness);
+	point(325,300);
+	
+}
+
+function colorpick(z){
+if(z===1){r=255; g=0; b=0};
+if(z===2){r=210; g=105; b=0};
+if(z===3){r=255; g=165; b=0};
+if(z===4){r=255; g=255; b=0};
+if(z===5){r=0; g=128; b=0};
+if(z===6){r=173; g=255; b=0};
+if(z===7){r=0; g=0; b=255};
+if(z===8){r=100; g=149; b=237};
+if(z===9){r=255; g=255; b=255};
+if(z===10){r=0; g=0; b=0};
+};
+
+
+document.getElementById( 'undo' ).onclick = function() {undo();}
+document.getElementById( 'clear' ).onclick = function() {clear();}
+document.getElementById( 'color1' ).onclick = function() {colorpick(1);}
+document.getElementById( 'color2' ).onclick = function() {colorpick(2);}
+document.getElementById( 'color3' ).onclick = function() {colorpick(3);}
+document.getElementById( 'color4' ).onclick = function() {colorpick(4);}
+document.getElementById( 'color5' ).onclick = function() {colorpick(5);}
+document.getElementById( 'color6' ).onclick = function() {colorpick(6);}
+document.getElementById( 'color7' ).onclick = function() {colorpick(7);}
+document.getElementById( 'color8' ).onclick = function() {colorpick(8);}
+document.getElementById( 'color9' ).onclick = function() {colorpick(9);}
+document.getElementById( 'color10' ).onclick = function() {colorpick(10);}
+document.getElementById( 'thicknessp' ).onclick = function() {thicknessx(1);}
+document.getElementById( 'thickness-' ).onclick = function() {thicknessx(0);}
+
+</script>
+	<div id="drawstuff2" >Draw Stuff</div>
+    <body bgcolor="white" >
+	<center>
+        <canvas id="targetcanvas" style="border: 3px solid black; margin-top=100px;"></canvas>
+	</center>
+    <div class = "wrapper2">
+    <button id="color10""> </button>
+    <button id="color9"> </button>
+    <button id="color8"> </button>
+    <button id="color7"> </button>
+    <button id="color6"> </button>
+    <button id="color5"> </button>
+    <button id="color4"> </button>
+    <button id="color3"> </button>
+    <button id="color2"> </button>
+    <button id="color1"> </button>
+	<button class="button" id="clear" onclick="test()">Clear</button>
+	<button class="crnbutton" id="undo" onclick="test()">Undo</button>
+    </div>
+	<div class ="wrapper">
+	<button id="thickness-" onclick="thickness(0)">-</button> 
+	<button id="thicknessp" onclick="thickness(1)">+</button>
+	</div>
+	<a href="work.html"><div class="backbtn">
+	<div class="menuline"></div>
+	<div class="menuline" style="top:37px"></div>
+	<div class="menuline" style="top:45px"></div>
+	</div></a>
+    </body>
+</html>
