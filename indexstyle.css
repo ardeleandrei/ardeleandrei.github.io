@@ -325,9 +325,11 @@ background-color: white;
 }
 
 p {
-   font-size:7px;
+   font-size:9px;
    font-family:Lulo;
    color: black;
+   -ms-transform: scale(1, 0.9); /* IE 9 */
+    -webkit-transform: scale(1, 0.9); /* Safari */
    transform: scale(1, 0.9);
    margin-top: -6px;
 
@@ -382,7 +384,7 @@ background: linear-gradient(-45deg, #E73C7E, #23A6D5, #23D5AB);
 }
 
 span { 
-    background: linear-gradient(-45deg, #747BB2, #23A6D5, #23D5AB);
+    background: linear-gradient(-45deg, #a0629d, #23A6D5, #23D5AB);
 	background-size: 400% 400%;
 	-webkit-animation: Gradient 20s ease infinite;
 	-moz-animation: Gradient 20s ease infinite;
