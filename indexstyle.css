@@ -1,16 +1,7 @@
-.noise
- {
- background-image: url("gif.gif");
-background-repeat: repeat;
- position: absolute;
-opacity: 0.1;
- width: 100%;
-height: 100%;
-}
 
 @font-face {
   font-family: Lulo;
-  src: url('Lulo.otf');
+  src: url('Lulo.woff');
 }
 
 
