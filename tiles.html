@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+	<link rel="stylesheet" type="text/css" href="tilesstyle.css">
+	<link rel="prefetch" href="https://ardy.ro/index.html">
+    <link rel="prerender" href="https://ardy.ro/index.html">
+        <script src="processing.min.js"></script>
+<script type="text/processing" data-processing-target="targetcanvas">
+
+Tile[] tiles;
+int slide = -360;
+int state = 2;
+int q = 1;
+var beep = new Audio('beepx.mp3');
+var over = new Audio('gameover.mp3');
+int score = 0;
+boolean sound = 1;
+float speed = 0;
+color red = color(255,0,0);
+color brown = color (128,0,0);
+void setup() {
+  size(360, 600);
+  strokeWeight(1);
+  stroke(150);
+  tiles = new Tile[30];
+  int k=0;
+  int indx = 0;
+  int color = 255;
+  for(int j =-1; j<5;j++){
+     for(int i =0; i<5; i++)
+     {
+       tiles[k++] = new Tile(i*72,j*120,72,120,color,4,indx++);
+     }
+	}
+}
+
+void draw() {
+if(state == 1){
+  playState();
+  } 
+ if(state == 2) {
+    menuState();
+	}
+
+}
+
+class Tile {
+
+int xPos;
+int yPos;
+int tileWidth;
+int tileHeight;
+int tileFill;
+float speed;
+int index;
+
+Tile(int xPosT, int yPosT, int tWidth, int tHeight, int tFill, float s, int ind){
+    xPos = xPosT;
+	yPos = yPosT;
+	tileWidth = tWidth;
+	tileHeight = tHeight;
+	tileFill = tFill;
+	speed =s;
+	index = ind;
+   }
+
+void update(){
+  yPos = yPos+speed;
+  int x=1;
+}
+
+  void display(){
+  fill(tileFill);
+     rect(xPos,yPos,tileWidth,tileHeight);
+  }
+
+ void clicked(int x,int y){
+ int mX = x;
+ int mY = y;
+   if(mX >= xPos && mY >= yPos && mX <= xPos+71 && mY <= yPos+119 && tileFill == 0){
+   tileFill = 150;
+   score++;
+   beep.currentTime = 0;
+   if(sound)
+   beep.play();
+   
+     }
+   if(mX >= xPos && mY >= yPos && mX <= xPos+71 && mY <= yPos+119 && tileFill == 255){
+   tileFill = red;
+     }
+	if(mX >= xPos && mY >= yPos && mX <= xPos+71 && mY <= yPos+119 && tileFill == brown){
+   tileFill = red;
+     }
+    
+ }
+ 
+ int checkRule(){
+ if((yPos === 600 && tileFill == 0) || tileFill == red
+ ){
+    return 0;
+   }
+   return 1;
+ }
+ 
+}
+
+void mouseClicked() {
+  if(state == 1){
+  for(i=0;i<30;i++)
+  tiles[i].clicked(mouseX, mouseY);
+  }
+  if(state == 2){
+  if(overStart()){
+      state = 1;
+      for(int i=0;i<30;i++){
+      tiles[i].tileFill=255;
+      }
+	}
+   if(overSound()){
+      if(sound) sound = 0;
+	  else {sound =1; q=0; beep.play();}
+	}
+  }
+}
+
+//State 1
+void menuState(){
+  if(q && sound){
+	over.play();
+	q=0;
+	}
+	score = 0;
+	stroke(0);
+	strokeWeight(1);
+    fill(255);
+    textSize(22);
+
+    rect(slide,240,360,120);
+	if(overStart()){
+	fill(1,153,144);
+	}
+	rect(slide+72,240,216,60);
+	fill(255);
+	if(overSound()){
+	fill(1,153,144);
+	}
+	rect(slide+72,300,216,60);
+	fill(0);
+	if(overStart()){
+	fill(255)
+	}
+
+	text("START",slide+145, 280);
+	fill(0);
+	if(overSound()){
+	fill(255)
+	}
+	if(sound)
+	text("SOUND: ON",slide+117, 340);
+	else 
+	text("SOUND: OFF",slide+117, 340);
+	if(slide <  0){slide+=40;}
+	
+}
+
+
+//State 2
+void playState(){
+q=1;
+stroke(150);
+
+if(slide != -360) slide = -360;
+
+background(255);
+  int k =1;
+  for(int i= 0; i<30;i++){
+  if(tiles[i].yPos === 600){
+       for(int j=i; j<i+5;j++){
+        tiles[i].yPos = -120;
+		if(random(0,3)<2.2){
+	   tiles[i].tileFill = 255;
+	   } else {
+	   tiles[i].tileFill = 0;
+	   }
+	    if(random(0,90)<2){
+	   tiles[i].tileFill = brown;
+	   }
+     } 
+    }
+  tiles[i].update();
+  tiles[i].display();
+  if(!tiles[i].checkRule()) {state = 2}
+   }
+   textSize(34);
+   fill(255);
+   textAlign(CENTER);
+   text(score,180,31);
+   fill(1,153,144);
+   text(score,180,30);
+   textAlign(LEFT);
+}
+
+boolean overStart()  {
+  if (mouseX >= 80 && mouseX <= 280 && 
+      mouseY >= 240 && mouseY <= 300) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+boolean overSound()  {
+  if (mouseX >= 80 && mouseX <= 280 && 
+      mouseY >= 300 && mouseY <= 360) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+</script>
+	<div id="tilestitle" style= "margin-left:-185px">Tiles</div>
+    <body bgcolor="white" >
+	<center>
+        <canvas id="targetcanvas" style="border: 3px; margin-top=100px;"></canvas>
+	</center>
+    
+	<a href="work.html"><div class="backbtn">
+	<div class="menuline"></div>
+	<div class="menuline" style="top:37px"></div>
+	<div class="menuline" style="top:45px"></div>
+	</div></a>
+    </body>
+</html>
