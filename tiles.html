@@ -5,20 +5,24 @@
 	<link rel="prefetch" href="https://ardy.ro/index.html">
     <link rel="prerender" href="https://ardy.ro/index.html">
         <script src="processing.min.js"></script>
-<script type="text/processing" data-processing-target="targetcanvas">
+<script type="text/processing" data-processing-target="thecanvas">
 
 Tile[] tiles;
 int slide = -360;
 int state = 2;
 int q = 1;
+long time = millis();
 var beep = new Audio('beepx.mp3');
 var over = new Audio('gameover.mp3');
-int score = 0;
+int score = 1;
+
 boolean sound = 1;
-float speed = 0;
+int speed;
 color red = color(255,0,0);
-color brown = color (128,0,0);
+color turquoise = color (1,153,144);
 void setup() {
+  frameRate(58);
+  background(255);
   size(360, 600);
   strokeWeight(1);
   stroke(150);
@@ -29,11 +33,10 @@ void setup() {
   for(int j =-1; j<5;j++){
      for(int i =0; i<5; i++)
      {
-       tiles[k++] = new Tile(i*72,j*120,72,120,color,4,indx++);
+       tiles[k++] = new Tile(i*72,j*120,72,120,color,indx++);
      }
 	}
 }
-
 void draw() {
 if(state == 1){
   playState();
@@ -41,9 +44,8 @@ if(state == 1){
  if(state == 2) {
     menuState();
 	}
-
+	
 }
-
 class Tile {
 
 int xPos;
@@ -51,22 +53,19 @@ int yPos;
 int tileWidth;
 int tileHeight;
 int tileFill;
-float speed;
 int index;
 
-Tile(int xPosT, int yPosT, int tWidth, int tHeight, int tFill, float s, int ind){
+Tile(float xPosT, float yPosT, int tWidth, int tHeight, int tFill, int ind){
     xPos = xPosT;
 	yPos = yPosT;
 	tileWidth = tWidth;
 	tileHeight = tHeight;
 	tileFill = tFill;
-	speed =s;
 	index = ind;
    }
 
 void update(){
   yPos = yPos+speed;
-  int x=1;
 }
 
   void display(){
@@ -79,7 +78,6 @@ void update(){
  int mY = y;
    if(mX >= xPos && mY >= yPos && mX <= xPos+71 && mY <= yPos+119 && tileFill == 0){
    tileFill = 150;
-   score++;
    beep.currentTime = 0;
    if(sound)
    beep.play();
@@ -88,15 +86,14 @@ void update(){
    if(mX >= xPos && mY >= yPos && mX <= xPos+71 && mY <= yPos+119 && tileFill == 255){
    tileFill = red;
      }
-	if(mX >= xPos && mY >= yPos && mX <= xPos+71 && mY <= yPos+119 && tileFill == brown){
+	if(mX >= xPos && mY >= yPos && mX <= xPos+71 && mY <= yPos+119 && tileFill == turquoise){
    tileFill = red;
      }
     
  }
  
  int checkRule(){
- if((yPos === 600 && tileFill == 0) || tileFill == red
- ){
+ if((yPos == 600 && tileFill == 0) || tileFill == red){
     return 0;
    }
    return 1;
@@ -129,13 +126,14 @@ void menuState(){
 	over.play();
 	q=0;
 	}
+	speed =4;
 	score = 0;
 	stroke(0);
 	strokeWeight(1);
     fill(255);
     textSize(22);
 
-    rect(slide,240,360,120);
+    rect(slide,240,359,120);
 	if(overStart()){
 	fill(1,153,144);
 	}
@@ -147,7 +145,7 @@ void menuState(){
 	rect(slide+72,300,216,60);
 	fill(0);
 	if(overStart()){
-	fill(255)
+	fill(255);
 	}
 
 	text("START",slide+145, 280);
@@ -162,33 +160,32 @@ void menuState(){
 	if(slide <  0){slide+=40;}
 	
 }
-
-
 //State 2
 void playState(){
 q=1;
 stroke(150);
-
 if(slide != -360) slide = -360;
 
 background(255);
   int k =1;
   for(int i= 0; i<30;i++){
-  if(tiles[i].yPos === 600){
-       for(int j=i; j<i+5;j++){
+  if((tiles[i].yPos == 600)){ 
+         if(k) score++;
+		 k=0;
         tiles[i].yPos = -120;
-		if(random(0,3)<2.2){
+         if(random(0,3)<2.5){
 	   tiles[i].tileFill = 255;
 	   } else {
 	   tiles[i].tileFill = 0;
 	   }
-	    if(random(0,90)<2){
-	   tiles[i].tileFill = brown;
+	    if(random(0,100)<1){
+	   tiles[i].tileFill = turquoise;
 	   }
-     } 
+      
     }
-  tiles[i].update();
+	tiles[i].update();
   tiles[i].display();
+  
   if(!tiles[i].checkRule()) {state = 2}
    }
    textSize(34);
@@ -217,12 +214,11 @@ boolean overSound()  {
     return false;
   }
 }
-
 </script>
 	<div id="tilestitle" style= "margin-left:-185px">Tiles</div>
     <body bgcolor="white" >
 	<center>
-        <canvas id="targetcanvas" style="border: 3px; margin-top=100px;"></canvas>
+        <canvas id="thecanvas"  style ="width: 361px; height: 600px" margin-top=100px;"></canvas>
 	</center>
     
 	<a href="work.html"><div class="backbtn">
