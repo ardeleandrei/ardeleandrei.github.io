@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+	<link rel="stylesheet" type="text/css" href="cggstyle.css">
+	<link rel="prefetch" href="https://ardy.ro/index.html">
+    <link rel="prerender" href="https://ardy.ro/index.html">
+        <script src="processing.min.js"></script>
+<script type="text/processing" data-processing-target="thecanvas">
+var k=0;
+var r=0;
+var g=0;
+var b=0;
+var i=0;
+var j=0;
+var z1;
+var z2;
+var z3;
+void setup() {
+q1 = round(random(50,255));
+  q2 = round(random(50,255));
+  q3 = round(random(50,255));
+   z1 = round(random(0,255));
+  z2 = round(random(0,255));
+  z3 = round(random(0,255));
+  background(255);
+  size(1280, 720);
+  noSmooth();
+  frameRate(60);
+  fill(0);
+  textSize(25);
+  for( let i=0;i<720;i= i+10){
+     for(let j=0;j<1280;j= j+10){
+
+	  stroke(map(i,0,720,q1,z1),map(j,0,1280,q2,z2),map((j+i)/2,0,1000,q3,z3));
+  
+	   point(j,i);
+	
+	 }
+   }
+  
+  text("Color Gradient Generator v0.1.0",470,340);
+  textSize(15);
+}
+void draw() {
+q1 = round(random(50,255));
+  q2 = round(random(50,255));
+  q3 = round(random(50,255));
+   z1 = round(random(0,255));
+  z2 = round(random(0,255));
+  z3 = round(random(0,255));
+   if(k){
+   generate();
+   k=0;
+   }
+}
+
+//void mouseClicked() {
+ // k=1;
+//}
+
+void generate() {
+for( let i=0;i<720;i= i+1){
+     for(let j=0;j<1280;j= j+1){
+	   stroke(map(i,0,720,q1,z1),map(j,0,1280,q2,z2),map((j+i)/2,0,1000,q3,z3));
+	   point(j,i);
+	 } 
+   }
+}
+void togglek(){
+fill(0);
+       textSize(30);
+       text("Generating...",20,35);
+k=1;
+       text("Generating...",20,35);
+}
+
+document.getElementById('generate').onclick = function(){togglek()}
+</script>
+	<!--<div id="tilestitle" style= "margin-left:-185px">Gradient Generator</div>-->
+	
+    <body bgcolor="white" >
+        <canvas id="thecanvas"  style ="width: 1280px; height: 720px; margin-top:0px; margin-left: 15%"></canvas>
+    
+	<a href="work.html"><div class="backbtn">
+	<div class="menuline"></div>
+	<div class="menuline" style="top:37px"></div>
+	<div class="menuline" style="top:45px"></div>
+	</div></a>
+	<div>
+	<button id = "generate" class = "button" style="position: fixed; top: 45%; left:5%;">Generate </button>
+	</div>
+    </body>
+</html>
