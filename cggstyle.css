@@ -18,22 +18,92 @@
 	margin-left: -760px;
 	}
 	
-	#tilestitle{
-	position: absolute;
-	left:50%;
-	margin-left: -329px;
-	color: black;
-	width:200px;
-	font-size:30px;
-	font-family: 'COCOGOOSE', sans-serif;
+	p {
+	font-family: Lulo;
+	font-size: 0.5em;
+	margin-left:18px;
+	cursor: default;
+}
+.popup{
+	position: fixed;
+	top: 37%;
+	left:5%;
+	white-space: nowrap;
+	overflow:hidden;	
+	width: 105px;
+    height: 40px;   
+    background: white;
+    border: solid;
+    color: black;   
+    font-size:20px;
+	font-weight:700;
 	}
 	
-	#thecanvas{
-	margin-top: 45px;
-	width: 360 px;
-	border: 2px;
+.popup:hover{
+	position: fixed;
+	top: 37%;
+	left:5%;
+	white-space: nowrap;
+	text-overflow:ellipsis;	
+	width:340px;
+	height: 200px;
+	-webkit-animation: slide-right 0.2s,slide-down 0.2s; 
+       -moz-animation: slide-right 0.2s,slide-down 0.2s; 
+        -ms-animation: slide-right 0.2s,slide-down 0.2s; 
+         -o-animation: slide-right 0.2s,slide-down 0.2s;
+            animation: slide-right 0.2s,slide-down 0.2s;
+			animation-delay: 0s,0.13s;
 	
-	}
+  
+	}	
+    
+	@keyframes slide-right {
+    from { width: 105px; height: 40px;	}
+    to   { width: 340px; height: 40px;}
+}
+    @-moz-keyframes slide-right {
+    from { width: 105px; height: 40px; }
+    to   { width: 340px; height: 40px;}
+}
+
+    @-webkit-keyframes slide-right {
+    from { width: 105px; height: 40px;}
+    to   { width: 340px; height: 40px;}
+    }
+
+    @-ms-keyframes slide-right {
+    from { width: 105px; height: 40px;}
+    to   { width: 340px; height: 40px;}
+    }
+
+    @-o-keyframes slide-right {
+    from { width: 105px; height: 40px;}
+    to   { width: 340px; height: 40px;}
+    }
+	
+	@keyframes slide-down {
+    from { height: 40px; }
+    to   { height: 200px; }
+}
+    @-moz-keyframes slide-down {
+    from { height: 40px; }
+    to   { height: 200px; }
+}
+
+    @-webkit-keyframes slide-down {
+    from { height: 40px; }
+    to   { height: 200px; }
+    }
+
+    @-ms-keyframes slide-down {
+    from { height: 40px; }
+    to   { height: 200px; }
+    }
+
+    @-o-keyframes slide-down {
+    from { height: 40px; }
+    to   { height: 200px; }
+    }
 	
     .button {
     width: 110px;
@@ -59,24 +129,7 @@
     transition:.2;
 	}
 	
-	.canvas_container {
-  height: 100%;
-  position: relative;
-  width: 100%;
-}
-	.canvas_canvas {
-  height: 100%;
-  position: relative;
-  width: 100%;
-  z-index: 1;
-}
-	.canvas_mirror {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%; 
-}
+
 	
 	.wrapper{
 	background-color: red;
@@ -111,38 +164,24 @@
 	
 	}
 
-	@-webkit-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
+	 #tilestitle{
+	position: absolute;
+	left:50%;
+	margin-left: -329px;
+	color: black;
+	width:200px;
+	font-size:30px;
+	font-family: 'COCOGOOSE', sans-serif;
 	}
-	50% {
-		background-position: 100% 50%
+	
+	#thecanvas{
+	margin-top: 45px;
+	width: 360 px;
+	border: 2px;
 	}
-	100% {
-		background-position: 0% 50%
+	
+	#generate:hover{
+		content: 'test';
 	}
-}
-
-@-moz-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
+	
 	
