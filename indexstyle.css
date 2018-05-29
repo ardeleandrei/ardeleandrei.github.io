@@ -62,11 +62,10 @@ h2.under {font-family: Lulo;
 }  
 
 .logo{
-	position: relative;
 	margin: 0 auto;
-	z-index: 9;
 	width: 1000px;
 	overflow: hidden;
+
 }
 
 .dropdown {
@@ -162,6 +161,14 @@ background-color: white;
          -o-animation: fadein 1s;
             animation: fadein 1s;
 			animation-delay: 0s;
+}
+
+.info{
+	display: block;
+	
+	width: 200px;
+	margin: 0 auto;
+	margin-top: 10%;
 }
 
 .dropdown:hover .dropbtn {
@@ -327,6 +334,7 @@ p {
    text-align: left;
 }
 body {
+	width: 100%;
     color:transparent;
     overflow: hidden;
 background: linear-gradient(-45deg, #E73C7E, #23A6D5, #23D5AB);
@@ -334,6 +342,7 @@ background: linear-gradient(-45deg, #E73C7E, #23A6D5, #23D5AB);
 	-webkit-animation: Gradient 20s ease infinite;
 	-moz-animation: Gradient 20s ease infinite;
 	animation: Gradient 20s ease infinite;
+	padding: none;
 }
 
 
@@ -489,11 +498,12 @@ span {
     }
 	.logo {
         max-width:347px;
-		
+		padding-right: 15px;
     }
 	.box{
 		width: calc(100% - 16px);
-
+		height: calc(100% - 140px);
+    
 	}
 	.btn{
 		height: 50px;
@@ -512,11 +522,52 @@ span {
 	}
 	.desc2{
 		display: block;
-		margin-top: 150px;
+		top: 5%;
 		margin-left: 8%;
 	}
 }
 
+@media only screen and (max-width: 425px){
+	#contact{
+		position: relative;
+		float: left;
+		width: 33vw;
 
+	}
+	#about{
+		position: relative;
+		float: left;
+		width: 33vw;
+		padding-right: -9px;
 
+	}
+	#work{
+		position: relative;
+		float: left;
+		width: 33vw;
+
+	}
+	
+}
+
+@media only screen and (max-width: 400px){
+	.desc2{
+		left:-4%;
+		-ms-transform: scale(0.9, 0.9); 
+    -webkit-transform: scale(0.9, 0.9); 
+    transform:scale(0.9, 0.9); 
+	}
+	
+}
+
+@media only screen and (max-width: 363px){
+	.logo{
+		-ms-transform: scale(0.95, 0.95); 
+    -webkit-transform: scale(0.95, 0.95);
+    transform: scale(0.95, 0.95);
+	position: absolute;
+	left: 0;
+	}
+	
+}
 
