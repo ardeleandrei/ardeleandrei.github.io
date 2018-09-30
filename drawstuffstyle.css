@@ -1,7 +1,7 @@
 	
 	@font-face {
     font-family: 'COCOGOOSE';
-	src: "Cocogoose.ttf";
+	src: url("Cocogoose.ttf");
    }
     #thickness-{
 	position:absolute;
@@ -107,7 +107,7 @@
     font-size:14px;
     font-weight:700;
 	font-color:red;
-	border-radius: 0px     0px      0px           0px;
+	border-radius: 0px     0px      0px           15px;
     }
 	
 	#color1 {
