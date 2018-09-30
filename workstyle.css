@@ -4,7 +4,6 @@
   src: url('Lulo.woff');
 }
 
-
 @font-face {
   font-family: Futura;
   src: url('FuturaLT.ttf');
@@ -161,6 +160,10 @@ background-color: white;
          -o-animation: fadein 1s;
             animation: fadein 1s;
 			animation-delay: 0s;
+}
+
+.box a{
+	text-decoration: none;
 }
 
 .dropdown:hover .dropbtn {
@@ -483,7 +486,7 @@ span {
 			animation-delay: 0s;
 }
 .projectbtn{
-
+  text-decoration: none;
   float: bottom;
   margin: -2px;
   background-color: white;
@@ -496,7 +499,7 @@ span {
 	border-style: solid;
 	border-color: black;
 	font-size: 13px;
-	text-decoration: none;
+	
 	border-width: 1.5px;
 	-o-transition:.2s;
     -ms-transition:.2s;
@@ -547,6 +550,7 @@ span {
 	}
 	span{
 		background: #23A6D5;
+	
 		-webkit-background-clip: text;
 	}
 	.menu{
@@ -560,6 +564,7 @@ span {
 		margin-left: 8%;
 	}
 }
+
 
 @media only screen and (max-width: 425px){
 	#contact{
