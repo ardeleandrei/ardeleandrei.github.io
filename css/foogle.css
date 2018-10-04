@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
+body{
+  margin: 10px;
+}
+
+.header{
+  padding-top: 12px;
+  width: 100%;
+  margin: 0 auto;
+  height: 180px;
+  background: #003D5B;
+  border-radius: 25px 25px 0px 0px;
+}
+
+h1{
+  font-family: Russo One;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  font-size: 50px;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0 auto;  
+}
+
+a{
+  float: left;
+  padding: 10px 0px 10px 0px;
+  width: 20%;
+  text-decoration: none;
+  font-family: Russo One;
+  text-align:center;
+  color: #003D5B;
+  background-color: white;
+  border-bottom: solid transparent;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.contain{
+  display: inline-block;
+  width:47%;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.menu{
+  background-image: linear-gradient(bottom, #F8F272 50%, white 50%);
+background-image: -o-linear-gradient(bottom, #F8F272 50%, white 50%);
+background-image: -moz-linear-gradient(bottom,#F8F272 50%,  white 50%);
+background-image: -webkit-linear-gradient(bottom, #F8F272 50%, white 50%);
+background-image: -ms-linear-gradient(bottom, #F8F272 50%, white 50%);
+  height: 40px;
+  width: 100%;
+}
+.main{
+  width: 100%;
+  height: 1000px;
+  background-color: #F8F272;
+}
+
+.selectedThis{
+  background-color: #F8F272;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-style: none;
+  transition: border-radius 0.25s;
+  
+  color: black;
+}
+.selectedPrev{
+  border-bottom-right-radius: 25px;
+  transition: border-bottom-right-radius 0.3s;
+}
+.selectedNext{
+  border-bottom-left-radius: 25px;
+  transition: border-bottom-left-radius 0.3s;
+}
+.noRadiusLeft{
+  border-top-left-radius: 0px;
+}
+.noRadiusRight{
+  border-top-right-radius: 0px;
+}
+.hoverBorder{
+  border-bottom: solid #003D5B;
+}
+
+.sticky{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+}
+
+img{
+  display: inline;
+  filter: grayscale(100%);
+  filter: saturate(0);
+}
+img:hover{
+  filter: grayscale(0);
+  filter: saturate(2);
+  transition: filter 0.5s;
+}
+
+.clearfix{
+  overflow: auto;
+}
+
+p{
+  color: white;
+}
+	
+	}

@@ -1,0 +1,617 @@
+
+@font-face {
+  font-family: Lulo;
+  src: url('Lulo.woff');
+}
+
+@font-face {
+  font-family: Futura;
+  src: url('FuturaLT.ttf');
+}
+
+h1 {font-family: Lulo;
+    font-size: 24px;
+	overflow: hidden;
+	text-overflow: clip; 
+}
+
+h1.title {font-family: Lulo;
+overflow:hidden;
+    display:inline; 
+    position:fixed;
+    font-size: 25px;
+	margin-left: 0%;
+	margin-top:20px;
+    white-space: nowrap;
+	color: white;
+	overflow: hidden;
+	text-overflow: clip; 
+    -webkit-animation: slide-top 1s, fadein 1s;
+	-webkit-animation: slide-top 1s, fadein 1s; 
+       -moz-animation: slide-top 1s, fadein 1s; 
+        -ms-animation: slide-top 1s, fadein 1s; 
+         -o-animation: slide-top 1s, fadein 1s;
+            animation: slide-top 1s, fadein 1s;
+			
+}
+
+
+
+h2 {font-family: Lulo;
+    font-size: 13px;
+	color:white;}
+	
+h2.under {font-family: Lulo;
+    font-size: 13px;
+	margin-left: 0%;
+	margin-top: 58px;	
+	background-color:white;
+    overflow:hidden;
+    display:inline-block;  
+    color:transparent;
+	
+
+	-webkit-animation: slide-right 0.8s, fadein 1s, precolor 0.5s, colorfade 2s;
+	-webkit-animation: slide-right 0.8s, fadein 1s, precolor 0.5s, colorfade 2s; 
+       -moz-animation: slide-right 0.8s, fadein 1s, precolor 0.5s, colorfade 2s; 
+        -ms-animation: slide-right 0.8s, fadein 1s, precolor 0.5s, colorfade 2s; 
+         -o-animation: slide-right 0.8s, fadein 1s, precolor 0.5s, colorfade 2s;
+            animation: slide-right 0.8s, fadein 1s, precolor 0.5s, colorfade 2s;
+			animation-delay: 0s,0s,0s,0.5s;
+}  
+
+.logo{
+	margin: 0 auto;
+	width: 1000px;
+	overflow: hidden;
+
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.btn {
+  background-color: transparent;
+    width: 140px;
+    color: #008080;
+	-o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2;
+    border: none;
+	font-family: Lulo;
+	font-size: 13px;
+	text-decoration: none;
+	float: right;
+	
+}
+.dropbtn {
+    background-color: transparent;
+    color: #008080;
+    width:140px;
+    border: none;
+	font-family: Lulo;
+	font-size: 13px;
+	text-decoration: none;
+	-o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2;
+
+}
+.dropdown-content {
+    display: none;
+	width: 140px;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+	font-family:Lulo;
+	font-size: 13px;
+	text-align: center;
+	-o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2;
+}
+
+.dropdown-content a {
+    color: #008080;
+    padding: 8px 11.5px;
+    text-decoration: none;
+    display: block;
+	-o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2;
+}
+
+.dropdown-content a:hover {background-color: #f4f4f4; color:white}
+.btn:hover {background-color: #f4f4f4; color:white}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.wrapper{
+position: relative;
+font-size: 0;
+position: static;
+margin: 0 auto;
+overflow: hidden;
+width:1000px;
+height:600px;
+}
+
+
+.box{
+position: absolute;
+top: 132px;
+width:1000px;
+margin: 0 auto;
+height:500px;
+background-color: white;
+	-webkit-animation: fadein 1s; 
+       -moz-animation: fadein 1s; 
+        -ms-animation: fadein 1s; 
+         -o-animation: fadein 1s;
+            animation: fadein 1s;
+			animation-delay: 0s;
+}
+
+.box a{
+	text-decoration: none;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #f4f4f4;};
+}
+
+<!-- SLIDE RIGHT -->
+
+@keyframes slide-right {
+    from { margin-left: -40%; }
+    to   { margin-left: 0; }
+}
+
+@-moz-keyframes slide-right {
+    from { margin-left: -40%; }
+    to   { margin-left: 0; }
+}
+
+@-webkit-keyframes slide-right {
+    from { margin-left: -40%; }
+    to   { margin-left: 0; }
+}
+
+@-ms-keyframes slide-right {
+    from { margin-left: -40%; }
+    to   { margin-left: 0; }
+}
+
+@-o-keyframes slide-right {
+    from { margin-left: -40%; }
+    to   { margin-left: 0; }
+}
+
+<!-- SLIDE TOP -->
+
+@keyframes slide-top {
+    from { margin-top: 50px; }
+    to   { margin-top: 20px; }
+}
+
+@-moz-keyframes slide-top {
+    from { margin-top: 50px; }
+    to   { margin-top: 20px; }
+}
+
+@-webkit-keyframes slide-top {
+    from { margin-top: 50px; }
+    to   { margin-top: 20px; }
+}
+
+@-ms-keyframes slide-top {
+    from { margin-top: 50px; }
+    to   { margin-top: 20px; }
+}
+
+@-o-keyframes slide-top {
+    from { margin-top: 50px; }
+    to   { margin-top: 20px; }
+}
+
+<!-- FADE -->
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+<!-- COLOR -->
+
+@keyframes colorfade {
+    from { color: #ffffff; }
+    to   { color: #008080; }
+}
+
+@-moz-keyframes colorfade {
+    from { color: #ffffff; }
+    to   { color: #008080; }
+}
+
+@-webkit-keyframes colorfade {
+    from { color: #ffffff; }
+    to   { color: #008080; }
+}
+
+@-ms-keyframes colorfade {
+    from { color: #ffffff; }
+    to   { color: #008080; }
+}
+
+@-o-keyframes colorfade {
+    from { color: #ffffff; }
+    to   { color: #008080; }
+}
+
+<!-- COLOR LINE -->
+
+@keyframes colorfadeline {
+    from { background-color: #ffffff; }
+    to   { background-color: #EB5707; }
+}
+
+@-webkit-keyframes colorfadeline {
+    from { background-color: #ffffff; }
+    to   { background-color: #EB5707; }
+}
+
+<!-- PRE-COLOR-->
+
+@keyframes precolor {
+    from { color: #ffffff; }
+    to   { color: #ffffff; }
+}
+
+@-moz-keyframes precolor {
+    from { color: #ffffff; }
+    to   { color: #ffffff; }
+}
+
+@-webkit-keyframes precolor {
+    from { color: #ffffff; }
+    to   { color: #ffffff; }
+}
+
+@-ms-keyframes precolor {
+    from { color: #ffffff; }
+    to   { color: #ffffff }
+}
+
+@-o-keyframes precolor {
+    from { color: #ffffff; }
+    to   { color: #ffffff }
+}
+
+p {
+   font-size:9px;
+   font-family:Lulo;
+   color: black;
+   -ms-transform: scale(1, 0.9); /* IE 9 */
+    -webkit-transform: scale(1, 0.9); /* Safari */
+   transform: scale(1, 0.9);
+   margin-top: -6px;
+
+   text-align: left;
+}
+body {
+	width: 100%;
+    color:transparent;
+    overflow: hidden;
+background: linear-gradient(-45deg, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 20s ease infinite;
+	-moz-animation: Gradient 20s ease infinite;
+	animation: Gradient 20s ease infinite;
+	padding: none;
+}
+
+
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+span { 
+    background: linear-gradient(-45deg, #a0629d, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 20s ease infinite;
+	-moz-animation: Gradient 20s ease infinite;
+	animation: Gradient 20s ease infinite;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+   
+}
+
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+	position: absolute;
+	margin-left: -186px;
+	margin-top: 238px;
+	overflow: hidden;
+}
+
+.menu{
+	width: 420px;
+	float: right;
+	-webkit-animation: fadein 1.0s; 
+       -moz-animation: fadein 1.0s; 
+        -ms-animation: fadein 1.0s; 
+         -o-animation: fadein 1.0s;
+            animation: fadein 1.0s;
+			animation-delay: 0s;
+			overflow: hidden;
+}
+	
+.btn:focus {outline:0;}
+
+.desc{
+	position: absolute;
+	margin-top: 350px;
+    padding-right:500px;
+	right: 0;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	width:100px;
+	font-size: 1em; 
+
+}
+
+.desc2{
+	position: absolute;
+	margin-top: 100px;
+	margin-left: 5%;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	width:100px;
+	font-size: 1em; 
+    display: none;
+}
+
+.backbtn{
+	position:absolute;
+    top: 20px;
+    left: 20px;
+    width:38px;
+    height:38px;
+	background-color: transparent;
+	}
+
+	.backbtn:hover{
+	background-color: #f4f4f4;
+	-o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2;
+	}
+	
+	.menuline{
+	position: absolute;
+    top: 8px;
+    left: 4px;
+    width:30px;
+    height:4px;
+	background: black;
+	display:block;
+	
+	}
+    
+	.menu2{
+		display: none;
+	}
+	
+	.projectbtn:hover {background-color: black; color:white}
+
+.projects{
+	display: block;
+	margin-left: 20%;
+    margin-top: 10%;
+	-webkit-animation:  fadein 1s;
+	-webkit-animation:  fadein 1.5s; 
+       -moz-animation:  fadein 1.5s; 
+        -ms-animation:  fadein 1.5s; 
+         -o-animation:  fadein 1.5s;
+            animation:  fadein 1.5s;
+			animation-delay: 0s;
+}
+.projectbtn{
+  text-decoration: none;
+  float: bottom;
+  margin: -2px;
+  background-color: white;
+    width: 305px;
+	height: 55px;
+    color: black;
+    border: none;
+	display: block;
+	font-family: Lulo;
+	border-style: solid;
+	border-color: black;
+	font-size: 13px;
+	
+	border-width: 1.5px;
+	-o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2;
+}
+	
+@media only screen and (max-width: 1000px){
+	.box{
+		width: calc(100% - 16px);
+	}
+}
+
+  
+
+
+
+@media only screen and (max-width: 700px){
+	.desc{
+		display: none;
+	}
+	.desc2{
+		display: block;
+		margin-top: 200px;
+		margin-left: 10%;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background: #23A6D5;
+    }
+	.logo {
+        max-width:347px;
+		padding-right: 15px;
+    }
+	.box{
+		width: calc(100% - 16px);
+		height: calc(100% - 140px);
+    
+	}
+	.btn{
+		height: 50px;
+	}
+	.rotate90{
+		display: none;
+	}
+	span{
+		background: #23A6D5;
+	
+		-webkit-background-clip: text;
+	}
+	.menu{
+		float: none;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	.desc2{
+		display: block;
+		top: 5%;
+		margin-left: 8%;
+	}
+}
+
+
+@media only screen and (max-width: 425px){
+	#contact{
+		position: relative;
+		float: left;
+		width: 33vw;
+
+	}
+	#about{
+		position: relative;
+		float: left;
+		width: 33vw;
+		padding-right: -9px;
+
+	}
+	#work{
+		position: relative;
+		float: left;
+		width: 33vw;
+
+	}
+	.projects{
+		width: 300px;
+		display: block;
+		margin: 0 auto;
+		margin-top: 25%;
+	}
+}
+
+@media only screen and (max-width: 400px){
+	.desc2{
+		left:-4%;
+		-ms-transform: scale(0.9, 0.9); 
+    -webkit-transform: scale(0.9, 0.9); 
+    transform:scale(0.9, 0.9); 
+	}
+	
+}
+
+@media only screen and (max-width: 363px){
+	.logo{
+		-ms-transform: scale(0.95, 0.95); 
+    -webkit-transform: scale(0.95, 0.95);
+    transform: scale(0.95, 0.95);
+	position: absolute;
+	left: 0;
+	}
+	
+}
+
