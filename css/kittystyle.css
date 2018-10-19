@@ -6,7 +6,7 @@
 #preload-01 { background: url('mydudes.gif') no-repeat -9999px -9999px; }
 
 body{
-	overflow: hidden;
+	
 	background: white;
 }
 
@@ -73,6 +73,37 @@ body{
 	position: absolute;
 }
 
+#mobile{
+	display: none;
+	padding: 0px;
+	position: relative;
+	width: 200px;
+	background-color: white;
+	left: calc(50% - 100px);
+	top: 10%;
+	border-radius: 100px 100px 100px 100px;
+	overflow: hidden;
+	z-index: 5;
+}
+
+.mobile2{
+	display: none;
+	top: 50%;
+	width: 100%;
+	height: 200px;
+	background-color: pink;
+	margin-left: 0;
+}
+
+#mtextul{
+	display: none;
+	color: white;
+	text-align: center;
+	margin-left: 0px;
+	padding: 0;
+	font-size: 10vw;
+}
+
 span{
 	background-color: black;
 }
@@ -94,4 +125,27 @@ span{
   80% { transform: translate(-1px, -1px) rotate(1deg); }
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@media only screen and (max-width: 500px) {
+    .box {
+       display: none;
+    }
+	#mobile{
+		display: block;
+	}
+	
+	#mtextul{
+		display: block;
+	}
+	.wrapper{
+		display: none;
+	}
+	body{
+		height: 100%;
+		background: black;
+  background: -moz-linear-gradient(180deg, black 50%, pink 50%);
+  background: -webkit-linear-gradient(180deg, black 50%, pink 50%);
+  background: linear-gradient(180deg, black 50%,pink 50%);
+	}
 }
