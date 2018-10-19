@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+
+<meta language="en">
+<head>
+<link rel="stylesheet" type="text/css" href="css/kittystyle.css">
+</head>
+<body>
+<div class="wrapper" id = "wrap" >
+   <div class = "box" id="boxx">
+      <div class = "insidebox">
+	  <p class = "textul" style="font-size: 80px; margin-top: 20px; padding-left: 104px; width: 1000px;">CUTE CAT</p>
+	  <p class = "textul" style="font-size: 15px; padding-left:50px">SO SMALL</p>
+	  <p class = "textul" style="font-size: 10px; padding-left:200px; margin-top: 150px">KITTY KITTY</p>
+         <div class="midimage" onclick = "meow(); changeImage();addShake(); setTimeout(changeExt, 2750); setTimeout(changeBack, 3000); setTimeout(removeShake, 3000); setTimeout(playBoop,2750)">
+		 <img src='cat.jpg' id="changeable" style="width: 205px; height: 205px"></img>
+		 </div>
+      </div>
+	  <p class = "textul" style="padding-top: 130px; padding-left: 405px; color: white;">IT CAN MEOW!</p>
+	  <p class = "textul" id="clicktext" style="padding-top: 60px; padding-left: 426px; font-size: 25px; transform: rotate(21deg);"><span><- CLICK THE CAT!</span></p></span>
+   </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+var meowsound = new Audio('meow.mp3');
+var boop = new Audio('Boop.mp3');
+function meow(){
+  meowsound.play();
+}
+
+function changeImage() {
+         document.getElementById("changeable").src = 'mydudes.gif';
+    }
+
+function changeExt() {
+       document.getElementById("changeable").src = 'ext.jpg';
+}
+
+function changeBack() {
+       document.getElementById("changeable").src = 'cat.jpg';
+}
+
+function addShake(){
+   document.getElementById("wrap").classList.add("earthquake");
+}
+
+function removeShake(){
+   document.getElementById("wrap").classList.remove("earthquake");
+}
+
+function playBoop(){
+    boop.play();
+}
+</script>
+
+</body>
