@@ -3,6 +3,8 @@
 	src: url('Lulo.otf');
 }
 
+#preload-01 { background: url('mydudes.gif') no-repeat -9999px -9999px; }
+
 body{
 	overflow: hidden;
 	background: white;
