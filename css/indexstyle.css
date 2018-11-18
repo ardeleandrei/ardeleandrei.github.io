@@ -27,12 +27,12 @@ overflow:hidden;
 	color: white;
 	overflow: hidden;
 	text-overflow: clip; 
-    -webkit-animation: slide-top 1s, fadein 1s;
-	-webkit-animation: slide-top 1s, fadein 1s; 
-       -moz-animation: slide-top 1s, fadein 1s; 
-        -ms-animation: slide-top 1s, fadein 1s; 
-         -o-animation: slide-top 1s, fadein 1s;
-            animation: slide-top 1s, fadein 1s;
+    -webkit-animation: slide-top 0.5s, fadein 0.5s;
+	-webkit-animation: slide-top 0.5s, fadein 0.5s; 
+       -moz-animation: slide-top 0.5s, fadein 0.5s; 
+        -ms-animation: slide-top 0.5s, fadein 0.5s; 
+         -o-animation: slide-top 0.5s, fadein 0.5s;
+            animation: slide-top 0.5s, fadein 0.5s;
 			
 }
 
@@ -76,12 +76,14 @@ h2.under {font-family: Lulo;
   background-color: transparent;
     width: 140px;
     color: #008080;
-	-o-transition:.2s;
-    -ms-transition:.2s;
-    -moz-transition:.2s;
-    -webkit-transition:.2s;
-    transition:.2;
+	padding-bottom: 135px;
+	-o-transition:.1s;
+    -ms-transition:.1s;
+    -moz-transition:.1s;
+    -webkit-transition:.1s;
+    transition:.1;
     border: none;
+	height: 110px;
 	font-family: Lulo;
 	font-size: 13px;
 	text-decoration: none;
@@ -132,7 +134,7 @@ h2.under {font-family: Lulo;
 }
 
 .dropdown-content a:hover {background-color: #f4f4f4; color:white}
-.btn:hover {background-color: #f4f4f4; color:white}
+.btn:hover {background-color: black; color:white}
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -155,11 +157,11 @@ width:1000px;
 margin: 0 auto;
 height:500px;
 background-color: white;
-	-webkit-animation: fadein 1s; 
-       -moz-animation: fadein 1s; 
-        -ms-animation: fadein 1s; 
-         -o-animation: fadein 1s;
-            animation: fadein 1s;
+	-webkit-animation: fadein 0.5s; 
+       -moz-animation: fadein 0.5; 
+        -ms-animation: fadein 0.5s; 
+         -o-animation: fadein 0.5s;
+            animation: fadein 0.5s;
 			animation-delay: 0s;
 }
 
@@ -168,8 +170,10 @@ background-color: white;
 	
 	width: 200px;
 	margin: 0 auto;
-	margin-top: 10%;
+	margin-top: 40%;
 }
+
+
 
 .dropdown:hover .dropbtn {
     background-color: #f4f4f4;};
@@ -337,11 +341,9 @@ body {
 	width: 100%;
     color:transparent;
     overflow: hidden;
-background: linear-gradient(-45deg, #E73C7E, #23A6D5, #23D5AB);
+background: #008080;
 	background-size: 400% 400%;
-	-webkit-animation: Gradient 20s ease infinite;
-	-moz-animation: Gradient 20s ease infinite;
-	animation: Gradient 20s ease infinite;
+	
 	padding: none;
 }
 
@@ -384,7 +386,7 @@ background: linear-gradient(-45deg, #E73C7E, #23A6D5, #23D5AB);
 }
 
 span { 
-    background: linear-gradient(-45deg, #a0629d, #23A6D5, #23D5AB);
+    background: #008080;
 	background-size: 400% 400%;
 	-webkit-animation: Gradient 20s ease infinite;
 	-moz-animation: Gradient 20s ease infinite;
@@ -481,6 +483,8 @@ span {
 	}
 }
 
+
+   
 @media only screen and (max-width: 700px){
 	.desc{
 		display: none;
@@ -494,7 +498,7 @@ span {
 
 @media only screen and (max-width: 600px) {
     body {
-        background: #23A6D5;
+        background: #008080;
     }
 	.logo {
         max-width:347px;
@@ -512,7 +516,7 @@ span {
 		display: none;
 	}
 	span{
-		background: #23A6D5;
+		background: #008080;
 		-webkit-background-clip: text;
 	}
 	.menu{
