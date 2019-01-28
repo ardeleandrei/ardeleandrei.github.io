@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Currency Converter - Vue.js</title>
+
+
+
+      <link rel="stylesheet" href="css/cstyle.css">
+
+
+</head>
+
+<body>
+<div id="app" class="container">
+	<h1 class="title" style="margin-left: calc(50% - 230px)">WT Project - Currency Converter</h1>
+
+			<!-- input field 1 -->
+      <div class = "wrapper">
+			<div class="leftcol">
+				<img class="country-flag" :src="imageSrc + 'ro' + '/flat/64.png'"/>
+				<h2 class="currency-name">RON</h2>
+				<p>Rate: 1 RON</p>
+				<input id="currencyInput" class="currency-input" @keyup="calcInput_1(event, countryRate)" :value="calc2">
+			</div>
+			<!-- input field 2 -->
+
+			<div class="rightcol">
+
+				<template v-for="currency in countries">
+					<template v-if="selected === currency.name" v-model="countryRate">
+
+						<img class="country-flag"  :src="imageSrc + currency.image + '/flat/64.png'"/>
+
+						<h2 class="currency-name" >{{currency.name}}</h2>
+						<p class="">Rate: {{currency.rate}} RON</p>
+						<input class="currency-input" @keyup="calcInput_2" :value="calc1"><span>{{currency.currency}}</span>
+					</template>
+				</template>
+			</div>
+      <select class="select-country" @change="updateRates(); updateHistory(); updateInputs()" v-model="selected">
+      <option v-for="country in countries">{{country.name}}</option>
+      </select>
+    </div>
+	</div>
+  <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
+
+
+
+    <script  src="js/cindex.js"></script>
+
+
+
+</body>
+
+</html>
