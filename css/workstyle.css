@@ -619,6 +619,9 @@ object{
 	.box{
 		width: calc(100% - 16px);
 	}
+	#barcode {
+		display: none;
+	}
 }
 
 
@@ -632,6 +635,9 @@ object{
 		margin-left: 10%;
 	}
 	.imgs{
+		display: none;
+	}
+	#barcode {
 		display: none;
 	}
 }
@@ -673,6 +679,9 @@ object{
 	.imgs{
 		display: none;
 	}
+	#barcode {
+		display: none;
+	}
 }
 
 
@@ -703,6 +712,9 @@ object{
 		margin: 0 auto;
 		margin-top: 25%;
 	}
+	#barcode {
+		display: none;
+	}
 
 }
 
@@ -713,7 +725,9 @@ object{
     -webkit-transform: scale(0.9, 0.9); 
     transform:scale(0.9, 0.9); 
 	}
-
+   #barcode {
+		display: none;
+	}
 }
 
 @media only screen and (max-width: 363px){
@@ -723,6 +737,9 @@ object{
     transform: scale(0.95, 0.95);
 	position: absolute;
 	left: 0;
+	}
+	#barcode {
+		display: none;
 	}
 }
 
