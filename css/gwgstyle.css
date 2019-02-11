@@ -1,0 +1,187 @@
+	
+	@font-face {
+  font-family: Lulo;
+  src: url('Lulo.woff');
+}
+
+    .wrapper{
+	position: absolute;
+	width: 200px;
+	left: 50%;
+    margin-top:-664px;
+	margin-left: -767.5px;
+	}
+	.wrapper2{
+	position: absolute;
+	width: 1200px;
+	left: 50%;
+	margin-left: -760px;
+	}
+	
+	p {
+	font-family: Lulo;
+	font-size: 0.5em;
+	margin-left:18px;
+	cursor: default;
+}
+.popup{
+	position: fixed;
+	top: 37%;
+	left:5%;
+	white-space: nowrap;
+	overflow:hidden;	
+	width: 105px;
+    height: 40px;   
+    background: white;
+    border: solid;
+    color: black;   
+    font-size:20px;
+	font-weight:700;
+	}
+	
+.popup:hover{
+	position: fixed;
+	top: 37%;
+	left:5%;
+	white-space: nowrap;
+	text-overflow:ellipsis;	
+	width:340px;
+	height: 200px;
+	-webkit-animation: slide-right 0.2s,slide-down 0.2s; 
+       -moz-animation: slide-right 0.2s,slide-down 0.2s; 
+        -ms-animation: slide-right 0.2s,slide-down 0.2s; 
+         -o-animation: slide-right 0.2s,slide-down 0.2s;
+            animation: slide-right 0.2s,slide-down 0.2s;
+			animation-delay: 0s,0.13s;
+	
+  
+	}	
+    
+	@keyframes slide-right {
+    from { width: 105px; height: 40px;	}
+    to   { width: 340px; height: 40px;}
+}
+    @-moz-keyframes slide-right {
+    from { width: 105px; height: 40px; }
+    to   { width: 340px; height: 40px;}
+}
+
+    @-webkit-keyframes slide-right {
+    from { width: 105px; height: 40px;}
+    to   { width: 340px; height: 40px;}
+    }
+
+    @-ms-keyframes slide-right {
+    from { width: 105px; height: 40px;}
+    to   { width: 340px; height: 40px;}
+    }
+
+    @-o-keyframes slide-right {
+    from { width: 105px; height: 40px;}
+    to   { width: 340px; height: 40px;}
+    }
+	
+	@keyframes slide-down {
+    from { height: 40px; }
+    to   { height: 200px; }
+}
+    @-moz-keyframes slide-down {
+    from { height: 40px; }
+    to   { height: 200px; }
+}
+
+    @-webkit-keyframes slide-down {
+    from { height: 40px; }
+    to   { height: 200px; }
+    }
+
+    @-ms-keyframes slide-down {
+    from { height: 40px; }
+    to   { height: 200px; }
+    }
+
+    @-o-keyframes slide-down {
+    from { height: 40px; }
+    to   { height: 200px; }
+    }
+	
+    .button {
+    width: 110px;
+    height: 45px;   
+    background: white;
+    border: solid;
+    color: black;   
+    font-size:10px;
+    font-weight:700;
+	font-family: Lulo;
+	border-radius: 0px     0px      0px      0px;
+    }
+	
+	.button:hover{
+	background-color: black;
+	color: white;
+	border: solid;
+	border-color:black;
+	-o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2;
+	}
+	
+
+	
+	.wrapper{
+	background-color: red;
+	}
+	
+	.backbtn{
+	position:fixed;
+    top: 20px;
+    left: 20px;
+    width:38px;
+    height:38px;
+	background-color: transparent;
+	}
+
+	.backbtn:hover{
+	background-color: #f4f4f4;
+	-o-transition:.2s;
+    -ms-transition:.2s;
+    -moz-transition:.2s;
+    -webkit-transition:.2s;
+    transition:.2;
+	}
+	
+	.menuline{
+	position:fixed;
+    top: 29px;
+    left: 24px;
+    width:30px;
+    height:4px;
+	background: black;
+	display:block;
+	
+	}
+
+	 #tilestitle{
+	position: absolute;
+	left:50%;
+	margin-left: -329px;
+	color: black;
+	width:200px;
+	font-size:30px;
+	font-family: 'COCOGOOSE', sans-serif;
+	}
+	
+	#thecanvas{
+	margin-top: 45px;
+	width: 360 px;
+	border: 2px;
+	}
+	
+	#generate:hover{
+		content: 'test';
+	}
+	
+	

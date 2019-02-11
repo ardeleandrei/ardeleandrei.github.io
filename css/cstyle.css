@@ -4,12 +4,13 @@
 }
 
 body {
-  background: teal;
+	background:url(
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAP0lEQVQoU43M2QkAIAwEUdPO9l/LtqNEUDxyzfdjpBUi2SVzigBICBfSmQtP5MIXmdBCH/TQBSO0YYYmrCCFA0nUJ4watNuQAAAAAElFTkSuQmCC) repeat;
   color: #000;
 }
 
 .title{
-	color: white;
+	color: black;
 	margin-top: 20px;
 	font-size: 15px;
 }
@@ -25,11 +26,13 @@ body {
 	top: 0;
 	height: 50px;
 	background-color: white;
-	border: solid;
-  z-index: 5;
+    border: solid;
+    z-index: 5;
+		border-width: 2px;
+
 	width: 110px;
 	right: 1px;
-	border-radius: 0px 0px 0px 5px;
+
 }
 
 .wrapper{
@@ -71,10 +74,11 @@ p{
 
   font-size: 20px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: 0px;
   border: 1px solid #CCC;
   padding-left: 10px;
   border:solid;
+  border-color: black;
 }
 
 .leftcol,
@@ -85,6 +89,7 @@ p{
 	padding: 20px;
 	border:solid;
 	border-left: none;
+	border-color: white;
 }
 
 .leftcol{
@@ -92,6 +97,7 @@ p{
 	background-color: white;
 	border: solid;
 	border-right: none;
+	border-color: white;
 }
 
 .rightcol{
@@ -114,6 +120,6 @@ p{
 		border-bottom: none;
 	}
 	.rightcol{
-		border-left: solid black;
+		border-left: solid white;
 	}
 }

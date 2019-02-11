@@ -1,7 +1,7 @@
-	
+
 	@font-face {
-    font-family: 'COCOGOOSE';
-	src: "Cocogoose.ttf";
+    font-family: Cocogoose;
+	src: url(Cocogoose.ttf);
    }
 
     .wrapper{
@@ -17,7 +17,7 @@
 	left: 50%;
 	margin-left: -760px;
 	}
-	
+
 	#tilestitle{
 	position: absolute;
 	left:50%;
@@ -25,31 +25,31 @@
 	color: black;
 	width:200px;
 	font-size:30px;
-	font-family: 'COCOGOOSE', sans-serif;
+	font-family: Cocogoose;
 	}
-	
+
 	#thecanvas{
 	margin-top: 45px;
 	width: 360 px;
 	border: 2px;
 	}
-	
+
     .button {
     width: 80px;
-    height: 45px;   
+    height: 45px;
     background: white;
     border: solid;
-    color: black;   
+    color: black;
     font-size:14px;
     font-weight:700;
 	font-color:red;
 	border-radius: 0px     0px      0px           15px;
     }
-	
+
 	.wrapper{
 	background-color: red;
 	}
-	
+
 	.backbtn{
 	position:fixed;
     top: 20px;
@@ -67,7 +67,7 @@
     -webkit-transition:.2s;
     transition:.2;
 	}
-	
+
 	.menuline{
 	position:fixed;
     top: 29px;
@@ -76,7 +76,7 @@
     height:4px;
 	background: black;
 	display:block;
-	
+
 	}
 
 	@-webkit-keyframes Gradient {
@@ -113,4 +113,3 @@
 	100% {
 		background-position: 0% 50%
 	}
-	
