@@ -42,11 +42,11 @@
       <select class="select-country" @change="updateRates(); updateHistory(); updateInputs()" v-model="selected">
       <option v-for="country in countries">{{country.name}}</option>
       </select>
-	  <h1 style="color: white; margin-left: calc(25% - 25px); position: absolute; top:340px">Rates are obtained from exchangeratesapi.io</h1>
+	  <h1 style="margin-left: calc(25% - 25px); position: absolute; top:340px">Rates are obtained from exchangeratesapi.io</h1>
     </div>
-	
+
 	</div>
-	
+
   <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
 

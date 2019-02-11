@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+	<link rel="stylesheet" type="text/css" href="css/gwgstyle.css">
+	<link rel="prefetch" href="https://ardy.ro/index.html">
+    <link rel="prerender" href="https://ardy.ro/index.html">
+        <script src="processing.min.js"></script>
+<script type="text/processing" data-processing-target="thecanvas">
+var k=0,r=0,g=0,b=0,z1,z2,z3;
+void setup() {
+q1 = round(random(50,255));
+  q2 = round(random(50,255));
+  q3 = round(random(50,255));
+   z1 = round(random(0,255));
+  z2 = round(random(0,255));
+  z3 = round(random(0,255));
+  background(255);
+  size(1280, 720);
+  noSmooth();
+  frameRate(60);
+  fill(0);
+  textSize(25);
+  for( let i=0;i<720;i= i+10){
+     for(let j=0;j<1280;j= j+10){
+	  stroke(map(i,0,720,q1,z1),map(j,0,1280,q2,z2),map((j+i)/2,0,1000,q3,z3));
+	   point(j,i);
+	 }
+   }
+  text("Gradient Wallpaper Generator v0.1.0",470,340);
+  textSize(15);
+}
+void draw() {
+
+q1 = round(random(50,255));
+  q2 = round(random(50,255));
+  q3 = round(random(50,255));
+   z1 = round(random(0,255));
+  z2 = round(random(0,255));
+  z3 = round(random(0,255));
+  start = 0;
+
+   if(k){
+   generate();
+   k=0;
+   }
+}
+void generate() {
+for( let i=0;i<720;i= i+1){
+     for(let j=0;j<1280;j= j+1){
+	   stroke(map(i,0,720,q1,z1),map(j,0,1280,q2,z2),map((j+i)/2,0,1000,q3,z3));
+	   point(j,i);
+	 }
+   }
+
+}
+void togglek(){
+fill(255);
+       textSize(30);
+       text("Generating...",20,35);
+	   fill(0);
+       textSize(30);
+       text("Generating...",21,35);
+k=1;
+}
+document.getElementById('generate').onclick = function(){togglek()}
+
+</script>
+    <body bgcolor="white" >
+        <canvas id="thecanvas"  style ="width: 1280px; height: 720px; margin-top:0px; margin-left: 15%"></canvas>
+	<a href="index.html"><div class="backbtn">
+	<div class="menuline"></div>
+	<div class="menuline" style="top:37px"></div>
+	<div class="menuline" style="top:45px"></div>
+	</div></a>
+	<div>
+	<button id = "generate" class = "button" style="position: fixed; top: 30%; left:5%;">Generate </button>
+	  <div class="popup" >
+	  <p style = "margin-left:34px; margin-top:12px">Info </p>
+	  <div style = "margin-top:19px">
+	  <p>Works by filling each pixel in</p>
+	  <p style="letter-spacing: 0.3px;">the canvas with a point that</p>
+	  <p>has the color value determined</p>
+	  <p>by manipulating random values.</p>
+	  <p>That way each iteration is unique.</p>
+	  </div>
+	  </div>
+	</div>
+    </body>
+</html>

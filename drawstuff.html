@@ -28,7 +28,7 @@ var mouseout=0;
 var q=10;
 var pausex=0;
 var paint = function() {
-    background(255, 255, 255);  
+    background(255, 255, 255);
     for(var i=1;i<data.length;i++){
         if (data[i-1].mousex && data[i].mousex) {
 		    strokeWeight(data[i].T);
@@ -53,7 +53,7 @@ mouseReleased = function() {
     }
     painting = false;
 };
-mouseOut = function() { 
+mouseOut = function() {
 data.push({mousex: 0, mousey: 0});
 mouseout=1;
 }
@@ -128,10 +128,10 @@ document.getElementById( 'thickness-' ).onclick = function() {thicknessx(0);}
 	<button class="crnbutton" id="undo" onclick="test()">Undo</button>
     </div>
 	<div class ="wrapper">
-	<button id="thickness-" onclick="thickness(0)">-</button> 
+	<button id="thickness-" onclick="thickness(0)">-</button>
 	<button id="thicknessp" onclick="thickness(1)">+</button>
 	</div>
-	<a href="work.html"><div class="backbtn">
+	<a href="index.html"><div class="backbtn">
 	<div class="menuline"></div>
 	<div class="menuline" style="top:37px"></div>
 	<div class="menuline" style="top:45px"></div>

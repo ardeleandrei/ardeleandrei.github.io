@@ -40,11 +40,11 @@ void setup() {
 void draw() {
 if(state == 1){
   playState();
-  } 
+  }
  if(state == 2) {
     menuState();
 	}
-	
+
 }
 class Tile {
 
@@ -81,7 +81,7 @@ void update(){
    beep.currentTime = 0;
    if(sound)
    beep.play();
-   
+
      }
    if(mX >= xPos && mY >= yPos && mX <= xPos+71 && mY <= yPos+119 && tileFill == 255){
    tileFill = red;
@@ -89,16 +89,16 @@ void update(){
 	if(mX >= xPos && mY >= yPos && mX <= xPos+71 && mY <= yPos+119 && tileFill == turquoise){
    tileFill = red;
      }
-    
+
  }
- 
+
  int checkRule(){
  if((yPos == 600 && tileFill == 0) || tileFill == red){
     return 0;
    }
    return 1;
  }
- 
+
 }
 
 void mouseClicked() {
@@ -155,10 +155,10 @@ void menuState(){
 	}
 	if(sound)
 	text("SOUND: ON",slide+117, 340);
-	else 
+	else
 	text("SOUND: OFF",slide+117, 340);
 	if(slide <  0){slide+=40;}
-	
+
 }
 //State 2
 void playState(){
@@ -169,7 +169,7 @@ if(slide != -360) slide = -360;
 background(255);
   int k =1;
   for(int i= 0; i<30;i++){
-  if((tiles[i].yPos == 600)){ 
+  if((tiles[i].yPos == 600)){
          if(k) score++;
 		 k=0;
         tiles[i].yPos = -120;
@@ -181,11 +181,11 @@ background(255);
 	    if(random(0,100)<1){
 	   tiles[i].tileFill = turquoise;
 	   }
-      
+
     }
 	tiles[i].update();
   tiles[i].display();
-  
+
   if(!tiles[i].checkRule()) {state = 2}
    }
    textSize(34);
@@ -198,7 +198,7 @@ background(255);
 }
 
 boolean overStart()  {
-  if (mouseX >= 80 && mouseX <= 280 && 
+  if (mouseX >= 80 && mouseX <= 280 &&
       mouseY >= 240 && mouseY <= 300) {
     return true;
   } else {
@@ -207,7 +207,7 @@ boolean overStart()  {
 }
 
 boolean overSound()  {
-  if (mouseX >= 80 && mouseX <= 280 && 
+  if (mouseX >= 80 && mouseX <= 280 &&
       mouseY >= 300 && mouseY <= 360) {
     return true;
   } else {
@@ -220,8 +220,8 @@ boolean overSound()  {
 	<center>
         <canvas id="thecanvas"  style ="width: 361px; height: 600px" margin-top=100px;"></canvas>
 	</center>
-    
-	<a href="work.html"><div class="backbtn">
+
+	<a href="index.html"><div class="backbtn">
 	<div class="menuline"></div>
 	<div class="menuline" style="top:37px"></div>
 	<div class="menuline" style="top:45px"></div>
