@@ -47,6 +47,7 @@ img{
 
 #work{
 	z-index: 7;
+	width: 7.9vh;
 }
 
 #contact{
@@ -54,41 +55,47 @@ img{
 }
 
 .el1{
+	display: block;
 position: absolute;
 animation: slide-down ease 0.5s forwards;
 }
 .el2{
+	display: block;
 position: absolute;
 animation: slide-left ease 0.5s forwards;
 
 transform: translateX(-40vw);
 }
 .el3{
+	display: block;
 position: absolute;
 animation: slide-right ease 0.5s forwards;
 transform: translateX(-40vw);
 
 }
 .el4{
+	display: block;
 transform: translateX(-10vw);
 position: absolute;
 animation: slide-right ease 0.4s forwards;
 animation-delay: 0.3s;
 }
 .el5{
+	display: block;
 position: absolute;
 animation: slide-down ease 0.4s forwards;
 transform: translateX(-80vw);
 animation-delay: 0.3s;
 }
 .el6{
+	display: block;
 position: absolute;
 transform: translateY(-40vw);
 animation: slide-down ease 0.4s forwards;
 animation-delay: 0.3s;
 }
 .el7{
-
+display: block;
 position: absolute;
 transform: translateX(0vw);
 animation: slide-left ease 0.4s normal ;
@@ -96,6 +103,7 @@ transition: all 0.5s;
 z-index: 1;
 }
 .el8{
+	display: block;
 position: absolute;
 transform: translateX(-20vw);
 animation: slide-down ease 0.4s forwards;
@@ -104,6 +112,7 @@ transition: z-index 0.5s;
 z-index: 2;
 }
 .el9{
+	display: block;
 position: absolute;
 transform: translateX(-20vw);
 animation: slide-down ease 0.4s forwards;
@@ -112,6 +121,7 @@ transition: z-index 0.5s;
 z-index: 3;
 }
 .el10{
+	display: block;
 position: absolute;
 transform: translateX(-20vw);
 animation: slide-down ease 0.4s forwards;
@@ -119,6 +129,8 @@ animation-delay: 0.5s;
 transition: z-index 0.5s;
 z-index: 4;
 }
+
+
 
 .aboutOpen{
 	animation: none;
@@ -199,6 +211,32 @@ z-index: 4;
   z-index: 20;
 }
 
+.imgframe{
+	display: none;
+
+	position: absolute;
+  background-image: url("../images/1.svg");
+  background-size: 49.6vh 49.6vh;
+	width: 49.6vh;
+	height: 49.6vh;
+	top: 16.5vh;
+	right: 0;
+	z-index: 19;
+	transition: background-image 0.1s;
+}
+
+.animateImg{
+	display: block;
+	transform: translateX(-49vh);
+	animation: slide-left ease 0.3s forwards;
+}
+
+.animateImgRev{
+	display: block;
+	animation: img-slide-back ease 0.3s forwards;
+}
+
+
 h1{
 color: white;
 font-family: Helvetica;
@@ -222,9 +260,43 @@ margin-top: 20vh;
 	position: absolute;
 	display: block;
 	z-index: 6;
+	width: 28vh;
+	left: 14.1%;
+  top: -50vh;
+}
+
+.images{
+	position: absolute;
+	display: block;
+	z-index: 7;
 	width: 8vh;
 	left: 14.1%;
   top: -50vh;
+}
+
+.artbtn{
+	text-decoration: none;
+  float: bottom;
+  width: calc(8vh + 1px);
+	height: calc(8vh + 2px);
+  color: #3f3f3f;
+  background-color: white;
+	display: block;
+	font-size: 18px;
+  border: none;
+	outline: none;
+	margin-left: -1px;
+}
+
+#artToggle{
+	position: absolute;
+	display: none;
+	height: 8.1vh;
+	width: calc(8.1vh + 1px);
+	background-color: white;
+	left: 14%;
+	top: -0.1vh;
+	z-index: 20;
 }
 
 .projectsShow{
@@ -251,8 +323,7 @@ margin-top: 20vh;
 .projectbtn{
   text-decoration: none;
   float: bottom;
-  background-color: white;
-  width: 8vh;
+  width: calc(8vh + 1px);
 	height: calc(8vh + 2px);
   color: #3f3f3f;
   background-color: #b6ebcb;
@@ -260,7 +331,9 @@ margin-top: 20vh;
 	font-family: Helvetica;
 	font-size: 18px;
   border: none;
+	outline: none;
 	box-shadow: inset 0px 0px 40px 40px #b6ebcb;
+	margin-left: -1px;
 }
 
 .labels{
@@ -287,28 +360,28 @@ margin-top: 20vh;
 	color: #3f3f3f;
 }
 #label1{
-	top: 0.8vh;
-	left: 1vh;
+	top: 3vh;
+	left: 3.2vh;
 }
 #label2{
-	top: 4.3vh;
-	left: 1vh;
+	top: 6.5vh;
+	left: 4.4vh;
 }
 #label3{
-	top: 7.8vh;
-	left: 1vh;
+	top: 10vh;
+	left: 7.1vh;
 }
 #label4{
-	top: 11.4vh;
-	left: 1vh;
+	top: 13.5vh;
+	left: 11.1vh;
 }
 #label5{
-	top: 14.8vh;
-	left: 1vh;
+	top: 16.9vh;
+	left: 7.6vh;
 }
 #label6{
-	top: 18.4vh;
-	left: 1vh;
+	top: 20.5vh;
+	left: 28.1vh;
 }
 .btnHover{
 	transform-origin: left;
@@ -318,6 +391,16 @@ margin-top: 20vh;
 .btnUnhover{
 	transform-origin: left;
 	animation: projbtn-reroll ease 0.2s forwards;
+}
+
+.artHover{
+	transform-origin: left;
+	animation: art-unroll ease 0.2s forwards;
+}
+
+.artUnhover{
+	transform-origin: left;
+	animation: art-reroll ease 0.2s forwards;
 }
 
 a{
@@ -331,7 +414,7 @@ a{
 	height: 80vh;
 	z-index: 10;
 	left: 29.5vh;
-	top: 36.6vh;
+	top: 37.2vh;
 
 }
 
@@ -394,6 +477,16 @@ a{
     transform: translateX(0vh);
   }
 }
+
+@keyframes img-slide-back {
+  from {
+    transform: translateX(0vh);
+  }
+  to {
+    transform: translateX(70vh);
+  }
+}
+
 @keyframes fade-in {
   from {
     opacity:0;
@@ -430,11 +523,39 @@ a{
   }
 }
 
+
 @keyframes projbtn-reroll {
 	from {
     transform: scale(6.2,1);
   }
   to {
     transform: scale(1,1);
+  }
+}
+
+@keyframes art-unroll {
+  from {
+    transform: scale(6.2,1);
+  }
+  to {
+    transform: scale(8.7,1);
+  }
+}
+
+@keyframes art-reroll {
+  from {
+    transform: scale(8.7,1);
+  }
+  to {
+    transform: scale(6.2,1);
+  }
+}
+
+@keyframes fade-out {
+  from {
+   opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

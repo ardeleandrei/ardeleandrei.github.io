@@ -2,6 +2,7 @@ $(document).ready(function(){
   var k1 = 0;
   var k2 = 0;
   var k3 = 0;
+  var k4 = 0;
   $("#about").hover(function(){
     $(".rightrect").css("display","inline");
     $(".rightrectx").css("display","none");
@@ -149,5 +150,50 @@ $(document).ready(function(){
 	k3 = 0;
 	}
   });
+
+  $("#artbtn0").click(function(){
+    $(this).removeClass("btnHover");
+    $(this).addClass("btnUnhover");
+    $(".images").removeClass("projectsHide");
+    $(".images").addClass("projectsShow");
+    $("#artToggle").show();
+    $(".rightrect").hide();
+    $(".rightrectx").hide();
+    $(".imgframe").removeClass("animateImgRev");
+    setTimeout(function(){
+      $(".imgframe").addClass("animateImg");
+    },200);
+
+  });
+  $("#artToggle").click(function(){
+    $(".images").removeClass("projectsShow");
+    $(".images").addClass("projectsHide");
+    $(this).hide(300);
+    $(".rightrect").show();
+    $(".rightrectx").show();
+    $(".imgframe").removeClass("animateImg");
+    $(".imgframe").addClass("animateImgRev");
+  });
+
+    $("#artbtn1").hover(function(){
+          $(".imgframe").css("background-image","url('images/6.svg')");
+        });
+    $("#artbtn2").hover(function(){
+          $(".imgframe").css("background-image","url('images/2.svg')");
+        });
+    $("#artbtn3").hover(function(){
+          $(".imgframe").css("background-image","url('images/3.svg')");
+        });
+    $("#artbtn4").hover(function(){
+          $(".imgframe").css("background-image","url('images/4.svg')");
+        });
+    $("#artbtn5").hover(function(){
+          $(".imgframe").css("background-image","url('images/5.png')");
+        });
+    $("#artbtn6").hover(function(){
+          $(".imgframe").css("background-image","url('images/1.svg')");
+        });
+
+
 });
 console.log("cats");

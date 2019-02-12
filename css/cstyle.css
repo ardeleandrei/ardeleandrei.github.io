@@ -4,9 +4,8 @@
 }
 
 body {
-	background:url(
-data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAP0lEQVQoU43M2QkAIAwEUdPO9l/LtqNEUDxyzfdjpBUi2SVzigBICBfSmQtP5MIXmdBCH/TQBSO0YYYmrCCFA0nUJ4watNuQAAAAAElFTkSuQmCC) repeat;
-  color: #000;
+	background-color: teal;
+
 }
 
 .title{
@@ -48,10 +47,11 @@ top: 100px;
 h1{
 	font-family: Lulo;
 	font-size: 10px;
+
 }
 
 h2 {
-  color: #1d2f50;
+  color: white;
   font-family: Lulo;
   font-size: 13px;
 }

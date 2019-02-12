@@ -14,7 +14,7 @@
 
 <body>
 <div id="app" class="container">
-	<h1 class="title" style="margin-left: calc(50% - 190px)">Vue.js Currency Converter</h1>
+	<h1 class="title" style="margin-left: calc(50% - 190px); color: white">Vue.js Currency Converter</h1>
 
 			<!-- input field 1 -->
       <div class = "wrapper">
@@ -42,7 +42,7 @@
       <select class="select-country" @change="updateRates(); updateHistory(); updateInputs()" v-model="selected">
       <option v-for="country in countries">{{country.name}}</option>
       </select>
-	  <h1 style="margin-left: calc(25% - 25px); position: absolute; top:340px">Rates are obtained from exchangeratesapi.io</h1>
+	  <h1 style="margin-left: calc(25% - 25px); position: absolute; top:340px; color: white">Rates are obtained from exchangeratesapi.io</h1>
     </div>
 
 	</div>
