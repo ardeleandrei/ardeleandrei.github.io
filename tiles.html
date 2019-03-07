@@ -4,7 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="css/tilesstyle.css">
 	<link rel="prefetch" href="https://ardy.ro/index.html">
     <link rel="prerender" href="https://ardy.ro/index.html">
-        <script src="processing.min.js"></script>
+
 <script type="text/processing" data-processing-target="thecanvas">
 
 Tile[] tiles;
@@ -14,7 +14,7 @@ int q = 1;
 long time = millis();
 var beep = new Audio('beepx.mp3');
 var over = new Audio('gameover.mp3');
-int score = 1;
+var score = 1;
 
 boolean sound = 1;
 int speed;
@@ -96,6 +96,9 @@ void update(){
  if((yPos == 600 && tileFill == 0) || tileFill == red){
     return 0;
    }
+	 app.currentScore = score;
+	 if(state == 2) {app.gameOver = 1;}
+		else {app.gameOver = 0;}
    return 1;
  }
 
@@ -188,6 +191,7 @@ background(255);
 
   if(!tiles[i].checkRule()) {state = 2}
    }
+	 /*
    textSize(34);
    fill(255);
    textAlign(CENTER);
@@ -195,6 +199,7 @@ background(255);
    fill(1,153,144);
    text(score,180,30);
    textAlign(LEFT);
+	 */
 }
 
 boolean overStart()  {
@@ -215,16 +220,39 @@ boolean overSound()  {
   }
 }
 </script>
-	<div id="tilestitle" style= "margin-left:-185px">Tiles</div>
+	<!--<div id="tilestitle" style= "margin-left:-185px">Tiles</div>-->
     <body bgcolor="white" >
-	<center>
-        <canvas id="thecanvas"  style ="width: 361px; height: 600px" margin-top=100px;"></canvas>
-	</center>
+			<div class="shadowBox"></div>
+        <canvas id="thecanvas"></canvas>
+	<div id="app" class="theVue">
+   <h2 class="tilenator" v-if="showInput">THE TILENATOR</h2>
+		<div class = "userInput"  v-if="showInput">
 
+		<center><input :maxlength="max" v-model = "username" @focus="username = null;"></center>
+		<center><button v-on:click= "checkInput()"></button></center>
+
+
+			<div class = "OK">
+			<h2>OK</h2>
+		  </div>
+
+	  </div>
+		<h1 style = "margin-left: 12%">{{currentScore}}</h1>
+		<h2 id="hstext" style = "margin-left: -2%; margin-top: 1%; text-align: center">High Scores</h2>
+
+ <li v-for="score in even(scores).slice(0,12)"><small>{{score.name}}:</small> {{score.score}}</li>
+ <div class="decoImg" v-if="showInput"></div>
+		</div>
 	<a href="index.html"><div class="backbtn">
 	<div class="menuline"></div>
 	<div class="menuline" style="top:37px"></div>
 	<div class="menuline" style="top:45px"></div>
 	</div></a>
+
+	<script src='https://unpkg.com/axios/dist/axios.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
+
+	  <script src="js/tiles.js"></script>
+		<script src="processing.min.js"></script>
     </body>
 </html>

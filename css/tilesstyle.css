@@ -1,8 +1,38 @@
-
 	@font-face {
     font-family: Cocogoose;
 	src: url(Cocogoose.ttf);
    }
+	 @font-face{
+	 	font-family: Lulo;
+	 	src: url(Lulo.otf);
+	 }
+
+ 	body{
+ 		background-color: teal;
+ 	}
+
+#hstext{
+	font-family: Lulo;
+	color: Teal;
+	font-size: smaller;
+}
+
+ li{
+	 border: 1px;
+
+	 padding: 11px;
+	 list-style-type: none;
+	 border: none;
+   text-align: center;
+	 padding-right: 5px;
+   font-size: smaller;
+	 font-family: Lulo;
+	 transition: all 2s;
+	 animation: fadeIn 0.2s ease-in;
+	 margin-left: 4px;
+ }
+
+
 
     .wrapper{
 	position: absolute;
@@ -18,22 +48,140 @@
 	margin-left: -760px;
 	}
 
-	#tilestitle{
+	.tilenator{
 	position: absolute;
-	left:50%;
-	margin-left: -329px;
+	left:-143%;
+ font-size: 20px;
 	color: black;
-	width:200px;
-	font-size:30px;
-	font-family: Cocogoose;
+  top: 15%;
+	font-family: Lulo;
+	letter-spacing: -2px;
+	text-shadow: 2px 2px #ededed;
 	}
 
 	#thecanvas{
-	margin-top: 45px;
-	width: 360 px;
+	position: absolute;
+	top: 5%;
 	border: 2px;
+	border-bottom: 3px;
+	width: 360px;
+	height: 600px;
+	left: 32%;
+	border-style: solid;
+	border-color:  black;
+	outline: none;
+	border-radius: 12px 0px 0px 12px;
+	border: none;
+
 	}
 
+	.theVue{
+  position: absolute;
+	width: 200px;
+	height: 600px;
+	background-color: #ededed;
+	left: calc(32% + 360px);
+	top: 5%;
+	border: 2px;
+	border-style: solid;
+	border-color: black;
+  border-radius: 0px 12px 12px 0px;
+	border: none;
+
+	}
+
+  .shadowBox{
+		position: absolute;
+		 z-index: -1;
+		width: 560px;
+		height: 600px;
+
+		top: 5%;
+		left:32%;
+		border-radius: 12px;
+		box-shadow: 0px 1px 20px 0px #333333;
+	}
+
+	.decoImg{
+		position: absolute;
+		background-image: url("../images/tilesart.png");
+		 z-index: 2;
+		width: 560px;
+		height: 300px;
+    pointer-events: none;
+		top: 50%;
+		left:-180%;
+    border-radius: 0px 0px 12px 0px;
+		opacity: 0.5;
+	}
+
+ .OK{
+	 position: absolute;
+	 display: block;
+	 margin-top: -67px;
+	 margin-left: 45%;
+	 color: white;
+	 pointer-events: none;
+ }
+
+	#app input {
+	  width: 252px;
+	  padding: 8px;
+	  background-color: black;
+		border: none;
+		color: white;
+		text-align: center;
+		font-weight: bold;
+		font-size: 20px;
+		border-radius: 1px;
+		font-family: Lulo;
+		font-size: smaller;
+		border-radius: 8px;
+		outline: none;
+	}
+
+ #app button{
+	 display: inline-block;
+	 width: 150px;
+	 height: 70px;
+	 padding: 18px;
+	 background-color: black;
+   border: none;
+	 text-align: center;
+	 font-weight: bold;
+	 font-size: 2vh;
+	 border-top: white;
+	 margin-top: 20px;
+	 color: white;
+	 overflow: hidden;
+	 border-radius: 10px;
+ }
+
+ #app button:hover{
+	 display: inline-block;
+	 width: 150px;
+	 height: 70px;
+	 padding: 18px;
+	 text-align: center;
+	 font-weight: bold;
+	 font-size: 2.1vh;
+	 color: white;
+	 transition: 0.1s;
+	 border-top: white;
+	 margin-top: 20px;
+	 box-shadow: 0px 1px 10px 0px #333333;
+ }
+
+	.userInput{
+		display: block;
+ position: absolute;
+ width: 360px;
+ height: 130px;
+ left: -360px;
+ top: calc(40% - 2px);
+ background-color: white;
+
+	}
     .button {
     width: 80px;
     height: 45px;
@@ -42,7 +190,6 @@
     color: black;
     font-size:14px;
     font-weight:700;
-	font-color:red;
 	border-radius: 0px     0px      0px           15px;
     }
 
@@ -59,57 +206,22 @@
 	background-color: transparent;
 	}
 
-	.backbtn:hover{
-	background-color: #f4f4f4;
-	-o-transition:.2s;
-    -ms-transition:.2s;
-    -moz-transition:.2s;
-    -webkit-transition:.2s;
-    transition:.2;
-	}
-
 	.menuline{
 	position:fixed;
     top: 29px;
     left: 24px;
     width:30px;
     height:4px;
-	background: black;
+	background: white;
 	display:block;
 
 	}
 
-	@-webkit-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@-moz-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
 	}
