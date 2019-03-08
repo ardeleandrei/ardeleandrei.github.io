@@ -119,7 +119,6 @@ var app = new Vue({
 		}
 	},
 
-
 	watch: {
 		gameOver: function() {
 			if(this.gameOver){
