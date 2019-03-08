@@ -4,7 +4,13 @@
 	<link rel="stylesheet" type="text/css" href="css/tilesstyle.css">
 	<link rel="prefetch" href="https://ardy.ro/index.html">
     <link rel="prerender" href="https://ardy.ro/index.html">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type = "text/javascript" language="javascript">
+$(document).ready(function() {
+    $('#thecanvas').delay(1000).fadeIn(400);
+});
 
+</script>
 <script type="text/processing" data-processing-target="thecanvas">
 
 Tile[] tiles;
@@ -237,10 +243,10 @@ boolean overSound()  {
 		  </div>
 
 	  </div>
-		<h1 style = "margin-left: 12%">{{currentScore}}</h1>
+		<h1 v-cloak style = "margin-left: 12%">{{currentScore}}</h1>
 		<h2 id="hstext" style = "margin-left: -2%; margin-top: 1%; text-align: center">High Scores</h2>
 
- <li v-for="score in even(scores).slice(0,12)"><small>{{score.name}}:</small> {{score.score}}</li>
+ <li v-cloak v-for="score in even(scores).slice(0,12)"><small>{{score.name}}:</small> {{score.score}}</li>
  <div class="decoImg" v-if="showInput"></div>
 		</div>
 	<a href="index.html"><div class="backbtn">
