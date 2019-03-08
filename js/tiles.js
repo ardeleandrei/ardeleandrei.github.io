@@ -26,8 +26,10 @@ var app = new Vue({
 		 checkInput: function() {
 			if (this.username !== null  ){
 				this.showInput = false;
+				var aux = this.username.toUpperCase();
+  			this.username = aux;
 				for(i in this.scores){
-					if(this.username.toUpperCase() === this.scores[i].name) {
+					if(this.username == this.scores[i].name) {
 						this.repeat = true;
 					}
 				}
@@ -36,8 +38,7 @@ var app = new Vue({
 			else {
 				this.showInput = true;
 			}
-			var aux = this.username.toUpperCase();
-			this.username = aux;
+			console.log("checkInput: " + aux + "/" + this.username);
 		},
 
 		checkHighScore: function() {
@@ -54,6 +55,7 @@ var app = new Vue({
 					x[i].score = q;
 				}
 			}
+			console.log("checkHighScore: "+ x + "/" + k);
 		},
 
 		postHighScore: function(){
@@ -83,7 +85,7 @@ var app = new Vue({
 
 		getScores: function() {
 
-       axios.get('https://api.jsonbin.io/b/5c7e8e352e4731596f16955f/8',
+       axios.get('https://api.jsonbin.io/b/5c7e8e352e4731596f16955f/9',
 			 {
 			 headers: {'secret-key':'$2a$10$ec/HbB8KKTTP7L0KGuYNxelNU532GoB3JdqfQa/iSWwjhSPUsOEom'}
 		   }).then((response)=>{
