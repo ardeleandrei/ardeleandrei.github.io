@@ -60,6 +60,7 @@
 	}
 
 	#thecanvas{
+		display: none;
 	position: absolute;
 	top: 5%;
 	border: 2px;
@@ -72,8 +73,10 @@
 	outline: none;
 	border-radius: 12px 0px 0px 12px;
 	border: none;
-
+	touch-action: manipulation;
 	}
+
+[v-cloak] {display: none;}
 
 	.theVue{
   position: absolute;
@@ -87,15 +90,18 @@
 	border-color: black;
   border-radius: 0px 12px 12px 0px;
 	border: none;
-
 	}
+
+ .show{
+	 display: block;
+ }
 
   .shadowBox{
 		position: absolute;
 		 z-index: -1;
 		width: 560px;
 		height: 600px;
-
+    background-color: white;
 		top: 5%;
 		left:32%;
 		border-radius: 12px;
