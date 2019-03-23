@@ -73,7 +73,6 @@
 	outline: none;
 	border-radius: 12px 0px 0px 12px;
 	border: none;
-	touch-action: manipulation;
 	}
 
 [v-cloak] {display: none;}
