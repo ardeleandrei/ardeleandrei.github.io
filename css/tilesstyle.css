@@ -60,7 +60,6 @@
 	}
 
 	#thecanvas{
-		display: none;
 	position: absolute;
 	top: 5%;
 	border: 2px;
