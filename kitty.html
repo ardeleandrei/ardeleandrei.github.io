@@ -9,15 +9,15 @@
 <p class = "textul" id = "mtextul">CUTE CAT</p>
 <p class = "textul" id = "mtextul" style="font-size: 5vw; margin-top: -30px;">IT CAN MEOW!</p>
 <div class="midimage" id = "mobile" onclick = "meow(); changeImage();addShake(); setTimeout(changeBack, 3000); setTimeout(removeShake, 3000); setTimeout(playBoop,2750)">
-		 <img src='./images/cat.jpg' id="changeable" style="width: 205px; height: 205px"></img>
+		 <img src='cat.jpg' id="changeable" style="width: 205px; height: 205px"></img>
 		 </div>
 
 <p class = "textul" id = "mtextul" style="font-size: 2vw; color: white; transform: rotate(-20deg); position: absolute; margin-top: -50px; margin-left: 20px">KITTY KITTY</p>
 <p class = "textul" id = "mtextul" style="font-size: 5vw; color: black">TAP THE CAT.</p>
 
-
-
-
+		 
+		 
+		 
 <div class="hidden" id="preload-01"></div>
 <div class="wrapper" id = "wrap" >
    <div class = "box" id="boxx">
@@ -26,7 +26,7 @@
 	  <p class = "textul" style="font-size: 15px; padding-left:50px">SO SMALL</p>
 	  <p class = "textul" style="font-size: 10px; padding-left:200px; margin-top: 150px">KITTY KITTY</p>
          <div class="midimage" onclick = "meow(); changeImage();addShake(); setTimeout(changeBack, 3000); setTimeout(removeShake, 3000); setTimeout(playBoop,2750)">
-		 <img src='./images/cat.jpg' id="changeable2" style="width: 205px; height: 205px"></img>
+		 <img src='cat.jpg' id="changeable2" style="width: 205px; height: 205px"></img>
 		 </div>
       </div>
 	  <p class = "textul" style="padding-top: 130px; padding-left: 405px; color: white;">IT CAN MEOW!</p>
@@ -36,20 +36,20 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
-var meowsound = new Audio('./sounds/meow.mp3');
-var boop = new Audio('./sounds/Boop.mp3');
+var meowsound = new Audio('meow.mp3');
+var boop = new Audio('Boop.mp3');
 function meow(){
   meowsound.play();
 }
 
 function changeImage() {
-         document.getElementById("changeable").src = './images/mydudes.gif';
-		  document.getElementById("changeable2").src = './images/mydudes.gif';
+         document.getElementById("changeable").src = 'mydudes.gif';
+		  document.getElementById("changeable2").src = 'mydudes.gif';
     }
 
 function changeBack() {
-       document.getElementById("changeable").src = './images/cat.jpg';
-	   document.getElementById("changeable2").src = './images/cat.jpg';
+       document.getElementById("changeable").src = 'cat.jpg';
+	   document.getElementById("changeable2").src = 'cat.jpg';
 }
 
 function addShake(){
