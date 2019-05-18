@@ -128,3 +128,5 @@ var app = new Vue({
 		},
 	}
 });
+
+console.log("test");
