@@ -17,7 +17,7 @@
       <div :class = "['drop-area', dragging ? 'drop-areaOver' : '']"
        @dragenter="dragging=true" @dragleave="dragging=false">
       <input class = "imgInput" type="file"  @change="previewImage" accept="image/*">
-      <img src="icons/arrowup.svg" class = "upIcon" v-if="!imageData"></img>
+      <img src="./editor/icons/arrowup.svg" class = "upIcon" v-if="!imageData"></img>
           <div class = "image-preview" v-if="imageData.length > 0">
             <img class = "preview" :src="imageData">
           </div>
@@ -31,15 +31,15 @@
   <div class = "sidebar" v-if="editing">
     <div class= "btnWrapper">
       <div class = "sidebarButton" id = "resize" v-on:click = "toggleState('resizing');" v-bind:class="{greyBackg: states.resizing}">
-        <img class = "resizeIcon" src = "icons/resizeicon.svg" v-bind:class="{fullBrightness: states.resizing}"></img></div>
+        <img class = "resizeIcon" src = "./editor/icons/resizeicon.svg" v-bind:class="{fullBrightness: states.resizing}"></img></div>
       <div class = "sidebarButton" id = "adjust" v-on:click = "toggleState('adjusting')" v-bind:class="{greyBackg: states.adjusting}">
-        <img class = "adjustIcon" src = "icons/adjusticon.svg" v-bind:class="{fullBrightness: states.adjusting}"></img></div>
+        <img class = "adjustIcon" src = "./editor/icons/adjusticon.svg" v-bind:class="{fullBrightness: states.adjusting}"></img></div>
       <div class = "sidebarButton" id = "filter" v-on:click = "toggleState('filtering')" v-bind:class="{greyBackg: states.filtering}">
-        <img class = "filterIcon" src = "icons/filtericon.svg" v-bind:class="{fullBrightness: states.filtering}"></img></div>
+        <img class = "filterIcon" src = "./editor/icons/filtericon.svg" v-bind:class="{fullBrightness: states.filtering}"></img></div>
         <div class = "sidebarButton" id = "crop" v-on:click = "toggleState('cropping')" v-bind:class="{greyBackg: states.cropping}">
-          <img class = "cropIcon" src = "icons/cropicon.svg" v-bind:class="{fullBrightness: states.cropping}"></img></div>
+          <img class = "cropIcon" src = "./editor/icons/cropicon.svg" v-bind:class="{fullBrightness: states.cropping}"></img></div>
       <div class = "sidebarButton" id = "text" v-on:click = "toggleState('texting')" v-bind:class="{greyBackg: states.texting}">
-         <img class = "textIcon" src = "icons/texticon.svg" v-bind:class="{fullBrightness: states.texting}"></img></div>
+         <img class = "textIcon" src = "./editor/icons/texticon.svg" v-bind:class="{fullBrightness: states.texting}"></img></div>
 <!--SAVE and cancel Save buttons -->
         <div class = "button" id="cancelSave" v-on:click = "toggleState('saving'); downloadTrigger--"><center><p>✖</p></center></div>
       <a v-bind:download="saveName+suffix" v-bind:href="href" class="button" ref="saveButton"
