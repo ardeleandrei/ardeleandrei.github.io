@@ -602,9 +602,11 @@ top: 200px;
 }
 
 
-.slideSaveBtn{
-  margin-left: 165px;
-  margin-top: 275px;
+.downloadBtn{
+  position: absolute;
+  z-index :20;
+  margin-left: 110px;
+  margin-top: 330px;
   width: 110px !important;
 
 }
