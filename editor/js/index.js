@@ -220,7 +220,6 @@ var app = new Vue({
 	 			self.processImage(img);
 	 			 }
 	 			 img.src = this.imageData;
-				 this.href = '#';
 	 	 },
 
 			processImage: function(img){
@@ -405,10 +404,6 @@ var app = new Vue({
 	},
 
 	watch: {
-    downloadTrigger: function(){
-			if(this.downloadTrigger % 2 !== 0){
-				this.loadOriginal();
-			}
-		}
+
 	}
 });
