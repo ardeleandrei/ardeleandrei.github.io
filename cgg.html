@@ -4,7 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="css/cggstyle.css">
 	<link rel="prefetch" href="https://ardy.ro/index.html">
     <link rel="prerender" href="https://ardy.ro/index.html">
-        <script src="processing.min.js"></script>
+        <script src="./js/processing.min.js"></script>
 <script type="text/processing" data-processing-target="thecanvas">
 var k=0,r=0,g=0,b=0,z1,z2,z3;
 void setup() {
@@ -49,9 +49,9 @@ for( let i=0;i<720;i= i+1){
      for(let j=0;j<1280;j= j+1){
 	   stroke(map(i,0,720,q1,z1),map(j,0,1280,q2,z2),map((j+i)/2,0,1000,q3,z3));
 	   point(j,i);
-	 } 
+	 }
    }
-  
+
 }
 void togglek(){
 fill(255);
@@ -66,8 +66,8 @@ document.getElementById('generate').onclick = function(){togglek()}
 
 </script>
     <body bgcolor="white" >
-        <canvas id="thecanvas"  style ="width: 1280px; height: 720px; margin-top:0px; margin-left: 15%"></canvas> 
-	<a href="work.html"><div class="backbtn">
+        <canvas id="thecanvas"  style ="width: 1280px; height: 720px; margin-top:0px; margin-left: 15%"></canvas>
+	<a href="index.html"><div class="backbtn">
 	<div class="menuline"></div>
 	<div class="menuline" style="top:37px"></div>
 	<div class="menuline" style="top:45px"></div>
