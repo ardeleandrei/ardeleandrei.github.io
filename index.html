@@ -30,6 +30,8 @@
 
         <transition name="fade">
        <p class = "aboutContent" id = "aboutContent1"  v-if="states.about">andrei ardelean</p>
+       <p class = "aboutMobile" id = "aboutMobile1">andrei ardelean
+       <br> frontend developer </br></p>
        </transition>
        <transition name="fade2">
       <p class = "aboutContent" id = "aboutContent2"  v-if="states.about">frontend developer</p>
@@ -46,11 +48,14 @@
         @mouseover = "workOver = true" @mouseout = "workOver = false" v-bind:class="{workOpen: states.work, cursorPointer:workOver, workClosed: !states.work && initwork}">
           <center>
         <p class = "workLabel">work</p>  </center>
+        <p class = "workMobile">visible on desktop version</p>
         <transition name="fade">
         <div class = "projectWrapper" v-if="states.work">
+
           <a href= "editor.html"><div class = "projectBox" id="box1">
                <center>
               <p class = "projectLabel">image editor app</p>
+
             </center>
           </div>
         </a>
@@ -99,6 +104,7 @@
         @mouseover = "contactOver = true" @mouseout = "contactOver = false" v-bind:class="{contactOpen: states.contact, cursorPointer:contactOver, contactClosed: !states.contact && initcontact}">
           <center>
         <p class = "contactLabel">contact</p></center>
+        <p class = "workMobile">ardeleandrei@gmail.com</p>
         <transition name="fade">
           <div  id="box7" v-if = "states.contact">
             <center>
