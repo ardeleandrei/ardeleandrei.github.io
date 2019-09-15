@@ -19,6 +19,10 @@ p{
 	margin-bottom: 0;
 }
 
+#app{
+	display: none;
+}
+
 .containter-fluid{
 	height: 100%;
 	width:100%;
@@ -302,6 +306,13 @@ margin-top:-0.8vh;
 	pointer-events: auto;
 }
 
+.aboutMobile{
+	display: none;
+}
+.workMobile{
+	display: none;
+}
+
 @keyframes reveal-about{
 	0%{
 		transform-origin: center;
@@ -548,26 +559,62 @@ transform: scale(1, 0.55);
 /* Extra Small Devices, Phones */
 @media (max-width: 576px) {
 
+   .aboutLabel{
+		 margin-left: -75vw;
+	 }
+	 .workLabel{
+		 margin-left: -77vw;
+	 }
+	 .contactLabel{
+		 margin-left: -72vw;
+	 }
     .row{
 			width: auto;
 		}
-
-		.left{
-			background-color: white;
-			height: 33vh;
-			width: 100vw;
+		p{
+			color: blue !important;
 		}
 
+	 .aboutContent{
+		 display: block !important;
+	 }
+
+	 .aboutMobile{
+	 	display: block;
+	 }
+
+	 #aboutMobile1{
+		 margin-top: 10%;
+		 margin-left: 20%
+	 }
+	 .workMobile{
+		 display: block;
+		 margin-left: 20%;
+		 margin-top: 10%;
+	 }
+		.left{
+			background-color: white;
+			height: 31vh;
+			width: 100vw;
+			color: black;
+		 padding: none;
+		}
+   .left:p{
+		 color: black;
+	 }
 		.center{
 			background-color: white;
-			height: 33vh;
+			height: 31vh;
 			width: 100vw;
 		}
 
 		.right{
 			background-color: white;
-			height: 33vh;
+			height: 31vh;
 			width: 100vw;
+		}
+		.row{
+			pointer-events: none;
 		}
 
 }
