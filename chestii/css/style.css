@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+@font-face{
+	font-family: NexaBold;
+	src: url("NexaBold.otf");
+}
+
+@font-face{
+	font-family: NexaLight;
+	src: url("NexaLight.otf");
+}
+
+@font-face{
+	font-family: visitor1;
+	src: url("visitor1.ttf");
+}
+html, body {
+	height: 100%;
+	margin: 0;
+  text-align: center;
+	overflow:auto;
+overflow:initial;
+font-family: 'Montserrat', sans-serif !important;
+}
+
+h1{
+	font-family: "visitor1" !important;
+	background-color: blue;
+}
+
+#app{
+	width: 100%;
+	background-color: white;
+	padding: none;
+	padding-bottom: none;
+}
+
+.container-flex{
+	width: 100%;
+}
+
+.col-sm-4{
+	padding-top: 0;
+	padding-right: 0 !important;
+	padding-left: 0 !important;
+	background-color: blue;
+}
+
+.col-lg-9{
+	min-width: 80% !important;
+}
+
+.col-lg-3{
+	max-width: 20% !important;
+}
+
+.sidebar {
+  height: 100vh;
+  border-radius: 0;
+	background-color:white;
+	position: fixed;
+	width: 20%;
+}
+
+.col-lg-4{
+	min-width: 26vw !important;
+}
+
+.col-sm-12{
+	position: fixed;
+}
+
+
+.scrollable{
+
+	overflow-y: scroll;
+}
+
+.item {
+  width: 26.4vw ;
+	height: 26.4vw ;
+  border-radius: 0;
+	background-color: grey;
+}
+
+.name-price{
+	width: 26.4vw ;
+	height: 10.4vw ;
+	border-radius: 0;
+	background-color: white;
+	padding: 3vw;
+}
+
+.item-name{
+	margin-bottom: 0.2vw;
+	font-size: 0.8vw;
+}
+
+.item-price{
+	font-weight: 700;
+	font-size: 1.3vw;;
+}
+
+.item:hover{
+	background-color: purple;
+	cursor: pointer;
+}
+
+p {
+    color:black;
+}
+
+
+.overflow-hidden{
+	overflow:hidden;
+}
+
+.row.no-pad {
+	margin-right:0;
+	margin-left:0;
+	margin-top:0;
+ margin-bottom: 0;
+}
+
+.row.no-pad > [class*='col-'] {
+	padding-right:0;
+	padding-left:0;
+  padding-bottom: 0;
+}
+
+.logo{
+	color: white;
+	font-size: 3vw;
+	margin-top: 5.3vw;
+	width: 15vw;
+	margin-left: -16.1vw;
+	background-color: #FA8BFF;
+  transform: rotate(-100grad);
+background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+
+}
+
+@media only screen and (max-width: 767px) {
+	.sidebar {
+	  position: inherit;
+		width: inherit;
+    height: 50vh;
+		margin-left: 0;
+	}
+
+	.col-lg-3{
+ 	 max-width: 100% !important;
+  }
+
+	.item {
+	  width: 49vw;
+		height: 49vw;
+		background-color: orange;
+		left: auto;
+		right: auto;
+	}
+
+	.item-img{
+		position: absolute;
+		margin-top: 100px;
+		width: 100px;
+		height: 100px;
+	}
+
+	.col-sm-6{
+		margin-left: 0vw;
+		width: 48vw !important;
+		height: 48vw !important;
+    position: absolute;
+		padding-bottom: 0;
+		min-height: 71.6vw !important;
+	}
+
+	.name-price{
+		width: 49vw ;
+		height: 22.6vw ;
+		background-color: white;
+		display: inline-block;
+		left: auto;
+		right: auto;
+		padding: 7vw;
+	}
+
+	.item-name{
+		margin-bottom: 0.2vw;
+		font-size: 2vw;
+	}
+
+	.item-price{
+		font-weight: 700;
+		font-size: 3vw;;
+	}
+
+
+  .text-area{
+		margin-top: -2vh;
+	}
+
+	.logo{
+	 padding-right: 2.2vw;
+   border:none;
+	 color: white;
+	 width: 26vw;
+	 height: 6vw;
+	 margin-left: -92vw;
+	 margin-top: 7vw;
+	 font-size: 5vw;
+
+}
+
+@media only screen and (min-width: 600px) {
+
+  }
+
+	@-webkit-keyframes AnimationName {
+	    0%{background-position:0% 51%}
+	    50%{background-position:100% 50%}
+	    100%{background-position:0% 51%}
+	}
+	@-moz-keyframes AnimationName {
+	    0%{background-position:0% 51%}
+	    50%{background-position:100% 50%}
+	    100%{background-position:0% 51%}
+	}
+	@keyframes AnimationName {
+	    0%{background-position:0% 51%}
+	    50%{background-position:100% 50%}
+	    100%{background-position:0% 51%}
+	}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andrei Ardelean</title>
+<meta name="description" content="Andrei Ardelean, portfolio.">
+<head>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+<script src="js/vue.min.js"></script>
+</head>
+<body>
+  <!--
+  <video autoplay muted loop id="video">
+  <source src="motiongraphics.mp4" type="video/mp4">
+</video>
+-->
+<div id="app" class = "vueApp">
+
+  <div class="container-flex overflow-hidden">
+    <div class="row overflow-hidden no-pad">
+            <div class=" col-lg-3 overflow-hidden">
+              <div class="row">
+                <div class=" col-sm-12">
+                  <div class="sidebar">
+                    <center>
+                    <h1 class="logo">chestii</h1>
+                  </center>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-9 col-md-9">
+
+              <div class="row no-pad">
+
+                <div class="col-sm-6 col-lg-4 col-md-4" ref="item_01">
+                  <div class="item"
+                  @mouseover="products.mugs.canaPisici.images.default = products.mugs.canaPisici.images.img2"
+                  @mouseleave="products.mugs.canaPisici.images.default = products.mugs.canaPisici.images.img1">
+                  <img class ="img-fluid"
+                    v-bind:src="'products/cani/cana cu pisici/' + products.mugs.canaPisici.images.default"
+                    ></div>
+                  <div class="name-price text-center">
+                    <p class = "item-name">CANĂ CU PISICI</p>
+                    <p class = "item-price">RON 50.00</p>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 col-md-4" ref="item_02">
+                  <div class="item"
+                  @mouseover="products.various.manaFacutMana.images.default = products.various.manaFacutMana.images.img2"
+                  @mouseleave="products.various.manaFacutMana.images.default = products.various.manaFacutMana.images.img1">
+                  <img class ="img-fluid"
+                    v-bind:src="'products/various/' + products.various.manaFacutMana.images.default"
+                    ></div>
+                  <div class="name-price text-center">
+                    <p class = "item-name">MÂNĂ DE FĂCUT CU MÂNA</p>
+                    <p class = "item-price">RON 60.00</p>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 col-md-4" ref="item_03">
+                  <div class="item"
+                  @mouseover="products.various.mainiPentruDegete.images.default = products.various.mainiPentruDegete.images.img2"
+                  @mouseleave="products.various.mainiPentruDegete.images.default = products.various.mainiPentruDegete.images.img1">
+                  <img class ="img-fluid"
+                    v-bind:src="'products/various/' + products.various.mainiPentruDegete.images.default"
+                    ></div>
+                  <div class="name-price text-center">
+                    <p class = "item-name">MÂINI MICI PENTRU DEGETE</p>
+                    <p class = "item-price">RON 55.00</p>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 col-md-4" ref="item_03">
+                  <div class="item"
+                  @mouseover="products.various.mousepadCovor.images.default = products.various.mousepadCovor.images.img2"
+                  @mouseleave="products.various.mousepadCovor.images.default = products.various.mousepadCovor.images.img1">
+                  <img class ="img-fluid"
+                    v-bind:src="'products/various/' + products.various.mousepadCovor.images.default"
+                    ></div>
+                  <div class="name-price text-center">
+                    <p class = "item-name">MOUSEPAD COVOR PERSAN</p>
+                    <p class = "item-price">RON 30.00</p>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 col-md-4">
+                  <div class="item">5</div>
+                  <div class="name-price text-center">
+                    <p class = "item-name">NIMIC</p>
+                    <p class = "item-price">RON 00.00</p>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 col-md-4">
+                  <div class="item">6</div>
+                  <div class="name-price text-center">
+                    <p class = "item-name">NIMIC</p>
+                    <p class = "item-price">RON 00.00</p>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4 col-md-4">
+                  <div class="item">7</div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-md-4">
+                  <div class="item">8</div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-md-4">
+                  <div class="item">9</div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-md-4">
+                  <div class="item">10</div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-md-4">
+                  <div class="item">11</div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-md-4">
+                  <div class="item">12</div>
+                </div>
+
+              </div>
+            </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="js/index.js">
+</script>
+<script>
+window.addEventListener("load", function(event) {
+ var vueApp = document.querySelector("#app");
+ vueApp.style.display = "block";
+});
+</script>
+</body>
