@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Height calculator</title>
+<meta name="description" content="FBH">
+<head>
+<link href="/calculator/css/style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+</head>
+<body>
+<div id="app" class = "vueApp">
+  <v-app>
+        <div class="wrapper">
+              <div class="main basic-card" v-if="currentView === 'enterHeight'">
+                    <h2 class="instruction"><v-icon style="padding: 0px 5px 3px 0px; color:white">mdi-calculator</v-icon>Height calculator tool</h2>
+                    <div class="enterHeight">
+                        <div class="enterHeight-content height-form">
+                            <li style="list-style-type: none; margin-left: 15px">Input your height:</li>
+
+                            <div class="enterHeight-input-wrapper">
+                            <input ref="input"
+                                   type="number"
+                                   min="100"
+                                   v-bind:placeholder="placeholder"
+                                   v-model="inputNumber"
+                                   class="enterHeight-input"
+                                   v-on:keyup.enter="submitHeight()">
+                                   <span style="padding-right: 10px; padding-left: 5px">cm</span>
+                                   <button class="submit-btn"
+                                           v-on:click="submitHeight()"
+                                           v-bind:class="{'disabled': !inputNumber || (inputNumber < 100)}">
+                                           <span>Calculate</span>
+                                    </button>
+                            </div>
+                       </div>
+                    </div>
+              </div>
+              <div class="main basic-card" v-if="currentView === 'result'">
+                <h2 class="instruction"><v-icon style="padding: 0px 5px 3px 0px; color:white">mdi-calculator</v-icon>Height calculator tool</h2>
+                <div class="results">
+                  <v-progress-circular
+                  style="margin: 50px"
+                  v-if="calculating"
+                  indeterminate
+                  color="#4c4c4c"><span style="margin-top: 80px">Calculating...</span>
+                </v-progress-circular>
+                </div>
+                <div v-if="!calculating" class="results">
+                  <li style="list-style-type: none; font-size: larger;">
+                    Your height is <strong style="color: black">{{inputNumber}}</strong> cm.</li>
+                </div>
+                  <div v-if="!calculating" style="display: flex; align-items: flex-end; flex-direction: column; width: 100%"><button class="ok-btn"
+                    v-on:click="submitOk()"
+                    v-bind:class="{'disabled': !inputNumber || (inputNumber < 100)}">OK</button></div>
+
+          </div>
+    </v-app>
+</div>
+
+<script src="/calculator/js/index.js">
+</script>
+<script>
+window.addEventListener("load", function(event) {
+ var vueApp = document.querySelector("#app");
+ vueApp.style.display = "block";
+});
+</script>
+</body>

@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+@font-face{
+	font-family: NexaBold;
+	src: url("NexaBold.otf");
+}
+
+@font-face{
+	font-family: RobotoMedium;
+	src: url("RobotoMedium.ttf");
+}
+
+@font-face{
+	font-family: RobotoLight;
+	src: url("RobotoLight.ttf");
+}
+
+@font-face{
+	font-family: typwrng;
+	src: url("typwrng.ttf");
+}
+html, body {
+	height: 100%;
+	margin: 0;
+	font-family: RobotoMedium;
+	background-color: #fafafa;
+	overflow: hidden !important;
+}
+
+h2 {
+	font-family: RobotoMedium;
+	font-weight: normal;
+}
+
+#app{
+	width: 100%;
+	background-color: white;
+	padding: none;
+	padding-bottom: none;
+	height: 100%;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #fafafa;
+	height: 100%;
+}
+
+.basic-card {
+	display: flex;
+	min-width: 700px;
+	min-height: 290px;
+	height: 38vh;
+	flex-direction: column;
+	align-items: flex-start;
+	font-family: RobotoMedium;
+	background-color: white;
+	margin: 0 auto;
+	margin-top: 8%;
+	border-radius: 15px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	padding: 1.5%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	max-height: 75%;
+	overflow: auto;
+}
+
+
+.logo {
+	display: flex;
+	font-family: RobotoMedium;
+	font-size: 13px;
+	color: white;
+	background-color: #3b5998;
+	padding-top: 6%;
+	width: 100%;
+}
+
+.logo h1 {
+	padding-left: 30px;
+	padding-bottom: 20px;
+}
+
+.instruction {
+	color: #3f3f3f;
+	font-family: RobotoMedium;
+	padding: 16px;
+	margin: 0px;
+	font-size: 18px;
+	border-radius: 15px 15px 0px 0px;
+	width: calc(100% + 1px);
+	border-bottom: 1px solid #e3e3e3;
+}
+
+.map {
+	max-width:810px
+}
+
+.captcha {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-self: center;
+	padding-top: 7%;
+	padding-bottom: 40px;
+	width: 100%;
+	height: 80%;
+}
+
+.submit-btn {
+	background-color: #3ab35a;
+	color: white;
+	border: none;
+	width: 50px;
+	height: 52px;
+	font-size: 17px;
+	font-family: RobotoMedium;
+	margin-left: 6px;
+	box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2);
+	border-radius: 5px;
+}
+
+.submit-btn.disabled {
+	background-color :#d7d9dd;
+	pointer-events: none;
+}
+
+.submit-btn:hover {
+	cursor: pointer;
+	border: none;
+}
+
+.height-form {
+	margin-top: 32px;
+}
+
+input:focus {
+	outline: none;
+	border: none;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+button:active {
+	border: none;
+	outline: none;
+}
+
+.submit-btn:active {
+	outline: none;
+	border: none;
+}
+
+.text-checkbox {
+	padding: 10px 10px 10px 40px;
+	display: flex;
+	flex-direction: row;
+}
+
+.main.basic-card .enterHeight{
+	align-items: flex-start;
+	padding: 0px 20px 30px 20px;
+}
+
+.enterHeight {
+	align-self: center;
+	margin: 20px;
+}
+
+.enterHeight p {
+	font-size: 18px;
+}
+
+.enterHeight .submit-btn {
+	width: 140px;
+	font-size: 15px;
+	height: 48px;
+}
+
+.enterHeight img {
+	padding: 15px;
+	margin-left: -30px;
+}
+
+.enterHeight-input {
+	z-index: 1;
+	width: 48%;
+	font-size: 15px;
+	padding: 12px;
+	border: none;
+	text-align: center;
+	box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2);
+	border-radius: 5px;
+	background-color: white;
+}
+
+.enterHeight-input-wrapper {
+	width: 100%;
+	padding: 15px;
+}
+
+i {
+	filter: invert(0.7);
+}
+
+.full {
+	width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+  background-color: transparent;
+}
+
+.submit-btn.start {
+	margin-bottom: 20px;
+	width: 150px;
+}
+
+.start-button-container {
+	display: flex;
+	flex-direction: column-reverse;
+	height: 100%;
+	width: 100%;
+	align-items: flex-end;
+}
+
+.ok-btn {
+	background-color: #3ab35a;
+	color: white;
+	border: none;
+	width: 100px;
+	height: 52px;
+	font-size: 17px;
+	font-family: RobotoMedium;
+	box-shadow: 0 1px 8px 0 rgba(0,0,0,0.2);
+	border-radius: 5px;
+	margin: 20px;
+	margin-top: 0px;
+}
+
+.results {
+	display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.results li {
+	margin: 50px;
+	color: #3f3f3f;
+}

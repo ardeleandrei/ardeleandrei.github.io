@@ -4,8 +4,8 @@
 }
 
 body {
-	background-color: blue;
-  height: 100%:
+	background-color: #acaebe;
+  height: 100%;
 	overflow: hidden;
 }
 
@@ -33,7 +33,7 @@ p{
 height: 100vh;
 width: 150vh;
 margin: 0 auto;
-background-color: blue;
+background-color:  #acaebe;
 -moz-user-select: none;
 overflow: hidden;
 }
@@ -44,7 +44,7 @@ overflow: hidden;
 }
 
 .col-sm-4:hover p{
-	color: blue;
+	color:  #acaebe;
 
 }
 
@@ -92,7 +92,7 @@ border-radius: none;
 	transform-origin: center;
 	animation: reveal-about-p  350ms forwards;
 
-	color: blue;
+	color:#acaebe;
 }
 
 .aboutClosed{
@@ -111,14 +111,14 @@ border-radius: none;
 	transform-origin: center;
 	animation: reveal-work ease 280ms forwards;
 	background-color: white;
-	color: blue;
+	color:  #acaebe;
 	cursor: context-menu;
 }
 
 .workOpen p{
 	transform-origin: center;
 	animation: reveal-about-p  265ms forwards;
-	color: blue;
+	color:  #acaebe;
 }
 
 .workClosed{
@@ -136,7 +136,7 @@ border-radius: none;
 	transform-origin: right;
 	animation: slideY ease 150ms forwards;
 	background-color: white;
-	color:blue;
+	color: #acaebe;
 	cursor: context-menu;
 }
 
@@ -144,7 +144,7 @@ border-radius: none;
 	transform-origin: center;
 	transform: scale(1, 0.55);
 		transition-duration: 150ms;
-	color: blue;
+	color:  #acaebe;
 }
 
 .contactClosed{
@@ -179,7 +179,7 @@ border-radius: none;
 #aboutContent3{
 font-size: 1.5vw;
 margin-top: -4vh;
-color: blue;
+color:  #acaebe;
 }
 
 #aboutContent2{
@@ -191,7 +191,7 @@ margin-top: -6vh;
 	width: 1%;
 	height: 0.5vh;
 	opacity: 0;
-	background-color:blue;
+	background-color: #acaebe;
 	transform-origin: left;
 		animation: slideXspan ease 700ms forwards;
 	animation-delay: 220ms;
@@ -572,7 +572,7 @@ transform: scale(1, 0.55);
 			width: auto;
 		}
 		p{
-			color: blue !important;
+			color:  #acaebe !important;
 		}
 
 	 .aboutContent{
