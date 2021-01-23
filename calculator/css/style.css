@@ -73,7 +73,7 @@ h2 {
 		width: 100%;
 		height: 100%;
 		flex-direction: column;
-		min-width: 400px;
+		min-width: 200px;
 		min-height: 100%;
 		align-items: flex-start;
 		font-family: RobotoMedium;
@@ -218,6 +218,8 @@ button:active {
 }
 
 .enterHeight-input-wrapper {
+	display: flex;
+	align-items: center;
 	width: 100%;
 	padding: 15px;
 }
