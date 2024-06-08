@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+          margin: 0px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3vw; /* Adjust gap between images */
+            justify-content: flex-start; /* Align items to the start */
+            align-items: center; /* Align items in the center vertically */
+            margin: 1vw;
+        }
+        .gallery div {
+            width: 21.37vw; /* Fixed square size */
+            height: 21.37vw; /* Fixed square size */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Ensures parts of the image that exceed the container are not shown */
+            background: #f0f0f0; /* Light grey background */
+            border: 1px solid #ccc; /* Optional border for visual structure */
+        }
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Covers the entire area, cropping where necessary */
+        }
+
+        @media (max-width: 600px) {
+            .gallery div {
+                width: 45%; /* Adjust width for smaller screens */
+                height: auto; /* Adjust height proportionally */
+            }
+        }
+
+        @media (max-width: 400px) {
+            .gallery div {
+                width: 90%; /* Almost full width for very small screens */
+                height: auto; /* Adjust height proportionally */
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="gallery">
+        <div v-for="image in images" :key="image.src">
+            <img :src="image.src" @error="handleError(image)" :alt="`Image ${image.index}`">
+        </div>
+    </div>
+</div>
+
+<script>
+new Vue({
+    el: '#app',
+    data: () => ({
+        baseFormat: ['png', 'jpg', 'jpeg', 'gif'],
+        images: []
+    }),
+    created() {
+        this.loadImages();
+    },
+    methods: {
+        loadImages() {
+            const basePath = 'brainrot/shitpost (';
+            for (let i = 1; i <= 30; i++) {
+                this.baseFormat.forEach(format => {
+                    const imagePath = `${basePath}${i}).${format}`;
+                    this.images.push({ src: imagePath, index: i, format: format });
+                });
+            }
+        },
+        handleError(image) {
+            const index = this.images.indexOf(image);
+            if (index !== -1) {
+                this.images.splice(index, 1);
+            }
+        }
+    }
+});
+</script>
+</body>
+</html>
