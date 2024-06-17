@@ -11,14 +11,14 @@
         .gallery {
             display: flex;
             flex-wrap: wrap;
-            gap: 3vw; /* Adjust gap between images */
             justify-content: flex-start; /* Align items to the start */
             align-items: center; /* Align items in the center vertically */
-            margin: 1vw;
+            gap: 20px;
+            margin: 20px;
         }
         .gallery div {
-            width: 21.37vw; /* Fixed square size */
-            height: 21.37vw; /* Fixed square size */
+            width: calc(100vw / 5 - 110px); /* Fixed square size */
+            height: calc(100vw / 5 - 110px); /* Fixed square size */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -70,7 +70,7 @@ new Vue({
     methods: {
         loadImages() {
             const basePath = 'brainrot/shitpost (';
-            for (let i = 1; i <= 30; i++) {
+            for (let i = 1; i <= 100; i++) {
                 this.baseFormat.forEach(format => {
                     const imagePath = `${basePath}${i}).${format}`;
                     this.images.push({ src: imagePath, index: i, format: format });
