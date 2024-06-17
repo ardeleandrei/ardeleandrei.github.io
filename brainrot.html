@@ -17,8 +17,10 @@
             margin: 20px;
         }
         .gallery div {
-            width: calc(100vw / 5 - 110px); /* Fixed square size */
-            height: calc(100vw / 5 - 110px); /* Fixed square size */
+            min-width: 270px; /* Fixed square size */
+            min-height: 270px; /* Fixed square size */
+            width: calc(100vw / 5 - 110px); /* Fixed square size */;
+            height: calc(100vw / 5 - 110px); /* Fixed square size */;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -51,7 +53,7 @@
 <body>
 <div id="app">
     <div class="gallery">
-        <div v-for="image in images" :key="image.src">
+        <div v-for="image in images" :key="image.src" v-if="image.visible">
             <img :src="image.src" @error="handleError(image)" :alt="`Image ${image.index}`">
         </div>
     </div>
@@ -73,15 +75,12 @@ new Vue({
             for (let i = 1; i <= 100; i++) {
                 this.baseFormat.forEach(format => {
                     const imagePath = `${basePath}${i}).${format}`;
-                    this.images.push({ src: imagePath, index: i, format: format });
+                    this.images.push({ src: imagePath, index: i, format: format, visible: true });
                 });
             }
         },
         handleError(image) {
-            const index = this.images.indexOf(image);
-            if (index !== -1) {
-                this.images.splice(index, 1);
-            }
+            image.visible = false;
         }
     }
 });
