@@ -1,128 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Andrei Ardelean</title>
-<meta name="description" content="Andrei Ardelean, portfolio.">
 <head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-<script src="js/vue.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Andrei Ardelean</title>
+    <meta name="description" content="Andrei Ardelean, portfolio.">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 1200px;
+            min-width: 10vw;
+            min-height: 10vw;
+            padding: 20px;
+        }
+        .section {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            min-width: 20vw !important;
+            min-height: 20vw !important;
+            width: 10vw;
+            height: 10vw;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .section:hover {
+            background: #e9ecef;
+        }
+        .label {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #343a40;
+        }
+        .content {
+            display: none;
+        }
+        .section.active .content {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-  <!--
-  <video autoplay muted loop id="video">
-  <source src="motiongraphics.mp4" type="video/mp4">
-</video>
--->
-<div id="app" class = "vueApp">
-  <div class = "container-fluid ">
-      <div class="row ">
-        <div class = "col-sm-4 left align-self-center" v-on:click = "toggleState('about'); initabout = true"
-        @mouseover = "aboutOver = true" @mouseout = "aboutOver = false" v-bind:class="{aboutOpen: states.about, cursorPointer:aboutOver, aboutClosed: !states.about && initabout}">
-        <div class = "back-triangle">
+<div class="container">
+    <div id="about" class="section" onclick="toggleSection('about')">
+        <div class="label">About</div>
+        <div class="content">
+            <p>Andrei Ardelean</p>
+            <p>Web Developer</p>
+            <p>JavaScript, Vue, AngularJS, Angular, TypeScript</p>
         </div>
-        <center>
-          <p class = "aboutLabel">about</p>
-        </center>
-
-        <transition name="fade">
-       <p class = "aboutContent" id = "aboutContent1"  v-if="states.about">andrei ardelean</p>
-       <p class = "aboutMobile" id = "aboutMobile1">andrei ardelean
-       <br> frontend developer </br></p>
-       </transition>
-       <transition name="fade2">
-      <p class = "aboutContent" id = "aboutContent2"  v-if="states.about">frontend developer</p>
-      </transition>
-      <transition name = "fade3">
-
-      <p class = "aboutContent" id = "aboutContent3"  v-if="states.about"><span class="animBox">JavaScript &nbspAngular &nbspAngularJS &nbspVue &nbspTypeScript</span></p>
-
-      </transition>
-      <p class = "aboutContent" id = "aboutContent4"  v-if="states.about"><span class="animBox" id = "animBox1">&nbsp</span></p>
-      </div>
-
-        <div class = "col-sm-4 center align-self-center" v-on:click = "toggleState('work'); initwork = true"
-        @mouseover = "workOver = true" @mouseout = "workOver = false" v-bind:class="{workOpen: states.work, cursorPointer:workOver, workClosed: !states.work && initwork}">
-          <center>
-        <p class = "workLabel">work</p>  </center>
-        <p class = "workMobile">visible on desktop version</p>
-        <transition name="fade">
-        <div class = "projectWrapper" v-if="states.work">
-
-          <a href= "editor.html"><div class = "projectBox" id="box1">
-               <center>
-              <p class = "projectLabel">image editor app</p>
-
-            </center>
-          </div>
-        </a>
-        <a href = "tiles.html">
-          <div class = "projectBox" id="box2">
-            <center>
-           <p class = "projectLabel">tiles game</p>
-         </center>
-          </div>
-        </a>
-        <a href = "converter.html">
-          <div class = "projectBox" id="box3">
-            <center>
-           <p class = "projectLabel">currency converter</p>
-         </center>
-          </div>
-        </a>
-        <a href = "cgg.html">
-          <div class = "projectBox" id="box4">
-            <center>
-           <p class = "projectLabel">wallpaper generator</p>
-         </center>
-          </div>
-        </a>
-        <a href="drawstuff.html">
-          <div class = "projectBox" id="box5">
-            <center>
-           <p class = "projectLabel">drawing app</p>
-         </center>
-          </div>
-        </a>
-        <a href = "art.html">
-          <div class = "projectBox" id="box6">
-            <center>
-           <p class = "projectLabel">graphics</p>
-         </center>
-          </div>
-        </a>
+    </div>
+    <div id="work" class="section" onclick="toggleSection('work')">
+        <div class="label">Work</div>
+        <div class="content">
+            <p><a href="editor.html">Image Editor App</a></p>
+            <p><a href="tiles.html">Tiles Game</a></p>
+            <p><a href="converter.html">Currency Converter</a></p>
+            <p><a href="cgg.html">Wallpaper Generator</a></p>
+            <p><a href="drawstuff.html">Drawing App</a></p>
+            <p><a href="art.html">Graphics</a></p>
         </div>
-      </transition>
-      </div>
-
-
-
-        <div class = "col-sm-4 right align-self-center" v-on:click = "toggleState('contact'); initcontact = true"
-        @mouseover = "contactOver = true" @mouseout = "contactOver = false" v-bind:class="{contactOpen: states.contact, cursorPointer:contactOver, contactClosed: !states.contact && initcontact}">
-          <center>
-        <p class = "contactLabel">contact</p></center>
-        <p class = "workMobile">ardeleandrei@gmail.com</p>
-        <transition name="fade">
-          <div  id="box7" v-if = "states.contact">
-            <center>
-           <p class = "projectLabel">ardeleandrei@gmail.com</p>
-         </center>
-          </div>
-        </transition></div>
-
-
-      </div>
-  </div>
+    </div>
+    <div id="contact" class="section" onclick="toggleSection('contact')">
+        <div class="label">Contact</div>
+        <div class="content">
+            <p>Email: ardeleandrei@gmail.com</p>
+        </div>
+    </div>
 </div>
-<script src="js/index.js">
-</script>
+
 <script>
-window.addEventListener("load", function(event) {
- var vueApp = document.querySelector("#app");
- vueApp.style.display = "block";
-});
+    function toggleSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        const isActive = section.classList.contains('active');
+        document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+        if (!isActive) {
+            section.classList.add('active');
+        }
+    }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 </body>
+</html>
