@@ -51,6 +51,9 @@
             color: rgb(86, 86, 86);
             position: relative;
         }
+        #about.section {
+            background: black;
+        }
         .section.active .content {
             display: block;
         }
@@ -60,14 +63,14 @@
             height: 40px;
             background-color: rgb(255, 255, 255);
         }
-        .artifact-two {
-            display: flex;
-            width: 4px;
-            height: 40px;
-            background-color: rgb(180 180 180);
-            position: absolute;
-            bottom: 18px;
-            right: 18px;
+        .description {
+            color: white;
+        }
+        .section-two {
+           align-content: end;
+        }
+        .mobile-contact {
+            display: none;
         }
 
         @media (max-width: 750px) {
@@ -78,8 +81,20 @@
                 margin: 10px 0;
                 min-width: 90vw;
                 width: 100%;
-                min-height: 55vw;
+                min-height: 95vh;
                 height: 55vw;
+            }
+            .section-two {
+                display: none;
+                padding: 20px;
+            }
+
+            #about {
+                padding: 12vw;
+            }
+
+            .mobile-contact {
+                display: block;
             }
         }
     </style>
@@ -90,21 +105,21 @@
         <div id="about" class="section" onclick="toggleSection('about')">
             <div class="artifact"></div>
             <v-card flat class="transparent d-flex">
-                <div class="d-flex flex-column mt-4" style="text-align: left">
+                <div class="d-flex flex-column mt-4 description" style="text-align: left">
                     <span>Ardelean Andrei P.F.A.</span>
                     <span>Professional Software Development & Consultancy Services</span>
-                    <span>Specialized in JavaScript, Vue, Nuxt, MongoDB, PostgreSQL, AngularJS, Angular, Typescript, Python & more...</span>
+                    <span>Specialized in JavaScript, Vue, Nuxt, MongoDB, PostgreSQL, AngularJS, Angular, Typescript, Python & more.</span>
+                    <span class="mobile-contact mt-3">Contact: ardeleandrei@gmail.com</span>
                 </div>
             </v-card>
         </div>
-        <div id="contact" class="section" style="text-align: left">
-            <div class="d-flex flex-column justify-space-between">
-                <div class="d-flex flex-column content">
+        <div id="contact" class="section section-two" style="text-align: left">
+            <div class="d-flex flex-column">
+                <div class="d-flex flex-column">
                     <span>Contact:</span>
                     <span>ardeleandrei@gmail.com</span>
                 </div>
             </div>
-            <div class="artifact-two"></div>
         </div>
     </div>
 </div>
