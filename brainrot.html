@@ -53,8 +53,8 @@
 <body>
 <div id="app">
     <div class="gallery">
-        <div v-for="image in images" :key="image.src" v-if="image.visible">
-            <img :src="image.src" @error="handleError(image)" :alt="`Image ${image.index}`">
+        <div v-for="image in images" :key="image.src">
+            <img :src="image.src" :alt="`Image ${image.index}`">
         </div>
     </div>
 </div>
@@ -63,24 +63,31 @@
 new Vue({
     el: '#app',
     data: () => ({
-        baseFormat: ['png', 'jpg', 'jpeg', 'gif'],
-        images: []
+        images: [],
+        maxImages: 100 // Set a high number to ensure we load all images
     }),
     created() {
         this.loadImages();
     },
     methods: {
-        loadImages() {
+        async loadImages() {
             const basePath = 'brainrot/artifact (';
-            for (let i = 1; i <= 100; i++) {
-                this.baseFormat.forEach(format => {
-                    const imagePath = `${basePath}${i}).${format}`;
-                    this.images.push({ src: imagePath, index: i, format: format, visible: true });
-                });
+            const extension = '.jpg';
+            for (let i = 1; i <= this.maxImages; i++) {
+                const imagePath = `${basePath}${i})${extension}`;
+                const exists = await this.checkImageExists(imagePath);
+                if (exists) {
+                    this.images.push({ src: imagePath, index: i });
+                }
             }
         },
-        handleError(image) {
-            image.visible = false;
+        async checkImageExists(url) {
+            try {
+                const response = await fetch(url, { method: 'HEAD' });
+                return response.ok;
+            } catch {
+                return false;
+            }
         }
     }
 });
