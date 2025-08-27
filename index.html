@@ -9,14 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         @keyframes blink {
-            0%, 50% {
-                opacity: 1;
-            }
-            50.1%, 100% {
-                opacity: 0;
-            }
+            0%, 50% { opacity: 1; }
+            50.1%, 100% { opacity: 0; }
         }
-
         body, html {
             height: 100%;
             margin: 0;
@@ -32,11 +27,12 @@
             width: 100%;
             max-width: 100%;
             height: auto;
+            flex-wrap: wrap;
         }
         .section {
             display: flex;
             flex-wrap: wrap;
-            align-content: space-between;
+            align-content: flex-start;
             margin: 10px;
             padding: 18px;
             min-width: 380px;
@@ -45,18 +41,13 @@
             height: 270px;
             background: rgb(218, 218, 218);
             border-radius: 0px;
-            text-align: center;
+            text-align: left;
             font-size: 11px;
             font-weight: 700;
             color: rgb(86, 86, 86);
             position: relative;
         }
-        #about.section {
-            background: #0a58ca;
-        }
-        .section.active .content {
-            display: block;
-        }
+        #about.section { background: #0a58ca; }
         .artifact {
             display: flex;
             width: 3px;
@@ -64,79 +55,94 @@
             background-color: rgb(255, 255, 255);
             animation: blink 1.08s infinite;
         }
-        .description {
-            color: white;
-        }
-        .section-two {
-           align-content: end;
-        }
-        .mobile-contact {
-            display: none;
-        }
-
+        .description { color: white; }
+        .section-two { align-content: end; background-color: white}
         @media (max-width: 750px) {
-            body {
-                background-color: black;
-                overflow: hidden;
-            }
-            .container {
-                flex-direction: column;
-            }
+            body { background-color: #0a58ca; overflow: hidden; }
+            .container { flex-direction: column; }
             .section {
                 margin: 10px 0;
                 min-width: 90vw;
                 width: 100%;
                 min-height: 70vh;
-                height: 55vw;
+                height: auto;
             }
-            .section-two {
-                display: none;
-                padding: 20px;
-            }
-
-            #about {
-                padding: 12vw;
-            }
-
-            .mobile-contact {
-                display: block;
-            }
-            .artifact {
-                margin-top: 2vh;
-            }
-            .container {
-                background-color: black;
-            }
-            #app {
-                background-color: black;
-            }
-            html {
-                background-color: black;
-            }
+            .section-two { display: none; padding: 20px; }
+            #about { padding: 12vw; }
+            .contact { display: block; }
+            .artifact { margin-top: 2vh; }
+            .container { background-color: #0a58ca; }
+            #app { background-color: #0a58ca; }
+            html { background-color: #0a58ca; }
+        }
+        /* language switch */
+        .lang-switch {
+          position: fixed;
+          top: 10px;
+          right: 12px;
+          font-size: 12px;
+          opacity: .65;
+          transition: opacity .2s ease;
+          z-index: 10;
+        }
+        .lang-switch:hover{ opacity: 1; }
+        .lang-switch button {
+          background: transparent;
+          border: 0;
+          padding: 0 4px;
+          cursor: pointer;
+        }
+        .lang-switch .active { text-decoration: underline; }
+        .badge-skill {
+          display: inline-block;
+          background: white;
+          color: rgb(86, 86, 86);
+          font-size: 11px;
+          padding: 4px 10px;
+          border-radius: 0px;
+          margin: 6px 6px 0 0;
+          white-space: nowrap;
+        }
+        #skills {
+            padding-left: 22px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+        .skills-container {
+            max-height: 91%;
+            display: flex;
+            flex-wrap: wrap;
+            overflow-y: hidden;
         }
     </style>
 </head>
 <body>
 <div id="app">
+    <div class="lang-switch">
+      <button :class="{ active: lang === 'en' }" @click="setLang('en')">EN</button> |
+      <button :class="{ active: lang === 'ro' }" @click="setLang('ro')">RO</button>
+    </div>
     <div class="container">
-        <div id="about" class="section d-flex flex-column" style="justify-content: space-between" onclick="toggleSection('about')">
+        <!-- About -->
+        <div id="about" class="section d-flex flex-column" style="justify-content: space-between">
             <div class="artifact d-flex"></div>
             <v-card flat class="transparent d-flex">
                 <div class="d-flex flex-column mt-4 description" style="text-align: left">
                     <span>Ardelean Andrei P.F.A.<br></span>
-                    <span>Software Development & Consulting<br></span>
-                    <span>Specialized in web technologies and AI integrations.</span>
-                    <span class="mobile-contact mt-3">Contact: andrei@ardy.ro</span>
+                    <span>{{ t('svc') }}<br></span>
+                    <span>{{ t('spec') }}</span>
+                    <span class="contact mt-3">{{ t('contact') }}: andrei@ardy.ro</span>
                 </div>
             </v-card>
         </div>
-        <div id="contact" class="section section-two" style="text-align: left">
-            <div class="d-flex flex-column">
-                <div class="d-flex flex-column">
-                    <span>Contact:</span>
-                    <span>andrei@ardy.ro</span>
-                </div>
-            </div>
+        <!-- Skills -->
+        <div id="skills" class="section d-flex" style="overflow-y:hidden; overflow-x:hidden; padding-left:22px; flex-wrap:wrap; align-content:flex-start;">
+            <v-card flat class="transparent skills-container">
+             <span v-for="skill in t('skills')" :key="skill" class="badge-skill">{{ skill }}</span>
+            </v-card>
         </div>
     </div>
 </div>
@@ -144,11 +150,55 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 <script>
   new Vue({
-      el: '#app',
-      data: () => ({
-      }),
-      methods: {
-      }
+    el: '#app',
+    data: () => ({
+        lang: 'en',
+        messages: {
+          en: {
+            svc: 'Software Development & Consulting',
+            spec: 'Specialized in web technologies and AI integrations.',
+            contact: 'Contact',
+            skills: [
+                'JavaScript','TypeScript','Vue.js','Nuxt.js','Angular','React','Vuex','Vuetify','Tailwind CSS',
+                'Node.js','Python','FastAPI',
+                'AI integrations with OpenAI API','ChatGPT','LangChain','Hugging Face','Qwen2.5-VL',
+                'LLMs','Stable Diffusion','VAE training','Prompt Engineering',
+                'MongoDB','Cosmos DB','PostgreSQL','MySQL',
+                'Azure Functions','Azure AI Search','RESTful APIs',
+                'Cloud & DevOps','Azure CI/CD','Azure DevOps',
+                'SEO','Performance optimization','Responsive design'
+            ]
+
+          },
+          ro: {
+            svc: 'Dezvoltare software & consultanță',
+            spec: 'Specializat în tehnologii web și integrări AI.',
+            contact: 'Contact',
+            skills: [
+                'JavaScript','TypeScript','Vue.js','Nuxt.js','Angular','React','Vuex','Vuetify','Tailwind CSS',
+                'Node.js','Python','FastAPI',
+                'Integrare AI cu OpenAI API','ChatGPT','LangChain','Hugging Face','Qwen2.5-VL', 'LLM',
+                'Stable Diffusion','Antrenare VAE','Prompt Engineering',
+                'MongoDB','Cosmos DB','PostgreSQL','MySQL',
+                'Azure Functions','Azure AI Search','API-uri REST',
+                'Cloud & DevOps cu Azure (CI/CD, Azure DevOps)',
+                'SEO','Optimizări de performanță','Accesibilitate','Design responsiv'
+            ]
+          }
+        }
+    }),
+    created() {
+        const browserLang = navigator.language || navigator.userLanguage;
+        if (browserLang.startsWith('ro')) {
+            this.lang = 'ro';
+        } else {
+            this.lang = 'en';
+        }
+    },
+    methods: {
+        setLang(l){ this.lang = l; },
+        t(key){ return this.messages[this.lang][key]; }
+    }
   });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
