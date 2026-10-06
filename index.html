@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta charset="UTF-8">
     <title>Andrei Ardelean</title>
     <meta name="description"
@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        *, *::before, *::after { box-sizing: border-box; }
         @keyframes blink {
 
             0%,
@@ -64,6 +65,7 @@
 
         #about.section {
             background: #0a58ca;
+            justify-content: space-between;
         }
 
         .artifact {
@@ -81,54 +83,6 @@
         .section-two {
             align-content: end;
             background-color: white
-        }
-
-        @media (max-width: 750px) {
-            body {
-                background-color: #0a58ca;
-                overflow: hidden;
-            }
-
-            .container {
-                flex-direction: column;
-            }
-
-            .section {
-                margin: 10px 0;
-                min-width: 90vw;
-                width: 100%;
-                min-height: 70vh;
-                height: auto;
-            }
-
-            .section-two {
-                display: none;
-                padding: 20px;
-            }
-
-            #about {
-                padding: 12vw;
-            }
-
-            .contact {
-                display: block;
-            }
-
-            .artifact {
-                margin-top: 2vh;
-            }
-
-            .container {
-                background-color: #0a58ca;
-            }
-
-            #app {
-                background-color: #0a58ca;
-            }
-
-            html {
-                background-color: #0a58ca;
-            }
         }
 
         /* language switch */
@@ -171,7 +125,7 @@
         #skills {
             padding-left: 22px;
             overflow-x: hidden;
-            overflow-y: auto;
+            overflow-y: hidden;
             display: flex;
             flex-wrap: wrap;
             align-content: flex-start;
@@ -183,31 +137,167 @@
             flex-wrap: wrap;
             overflow-y: hidden;
         }
+
+        .contact-link { color: inherit; text-decoration: none; }
+        .skills-heading { display: none; }
+        .lang-switch button:focus-visible,
+        .contact-link:focus-visible {
+            outline: 2px solid currentColor;
+            outline-offset: 3px;
+        }
+
+        /* Stack before the two 380px cards run out of space. */
+        @media (max-width: 850px) {
+            html, body {
+                display: block;
+                height: auto;
+                min-height: 100vh;
+                min-height: 100svh;
+                background-color: #0a58ca;
+            }
+
+            body { overflow-y: auto; }
+
+            #app {
+                width: 100%;
+                max-width: 620px;
+                margin: 0 auto;
+                padding: max(12px, env(safe-area-inset-top))
+                         max(16px, env(safe-area-inset-right))
+                         max(24px, env(safe-area-inset-bottom))
+                         max(16px, env(safe-area-inset-left));
+            }
+
+            .lang-switch {
+                position: static;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                min-height: 44px;
+                margin-bottom: 12px;
+                font-size: 13px;
+                color: white;
+                opacity: 1;
+            }
+
+            .lang-switch button {
+                min-width: 44px;
+                min-height: 44px;
+                color: inherit;
+            }
+
+            .container {
+                flex-direction: column;
+                gap: 16px;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            .section {
+                width: 100%;
+                min-width: 0;
+                max-width: 100%;
+                height: auto;
+                min-height: 0;
+                margin: 0;
+                padding: clamp(20px, 5vw, 32px);
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            #about.section {
+                min-height: 0;
+                height: auto;
+                justify-content: flex-start;
+                padding: 20px clamp(20px, 5vw, 32px) 24px;
+                gap: 24px;
+            }
+
+            .artifact { height: 24px; margin-top: 0; flex-shrink: 0; }
+            .description { min-width: 0; line-height: 1.7; overflow-wrap: anywhere; }
+            .description.mt-4 { margin-top: 0 !important; }
+            .description > span:first-child { font-size: 18px; line-height: 1.4; }
+            .description > span + span { margin-top: 6px; }
+            .description > span:nth-child(3) { margin-top: 12px; font-size: 15px; font-weight: 400; line-height: 1.65; }
+            .contact { display: block; }
+            .contact-link { display: inline-flex; align-items: center; min-height: 44px; }
+
+            #skills.section {
+                background: transparent;
+                color: white;
+                padding: 0 clamp(20px, 5vw, 32px) 24px;
+                overflow: visible;
+            }
+
+            .skills-heading {
+                display: block;
+                width: 100%;
+                margin: 0 0 16px;
+                padding-top: 24px;
+                border-top: 1px solid rgba(255, 255, 255, .24);
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 1.5;
+                letter-spacing: .1em;
+                text-transform: uppercase;
+                color: white;
+            }
+
+            .skills-container {
+                display: flex;
+                width: 100%;
+                min-width: 0;
+                max-height: none;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                gap: 8px;
+                overflow: visible;
+            }
+
+            .badge-skill {
+                background: rgba(255, 255, 255, .06);
+                border: 1px solid rgba(255, 255, 255, .28);
+                color: white;
+                max-width: 100%;
+                margin: 0;
+                padding: 6px 9px;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 1.5;
+                white-space: normal;
+                overflow-wrap: anywhere;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .artifact { animation: none; }
+        }
     </style>
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" :lang="lang">
         <div class="lang-switch">
-            <button :class="{ active: lang === 'en' }" @click="setLang('en')">EN</button> |
-            <button :class="{ active: lang === 'ro' }" @click="setLang('ro')">RO</button>
+            <button type="button" aria-label="Read in English" :aria-pressed="lang === 'en'" :class="{ active: lang === 'en' }" @click="setLang('en')">EN</button> |
+            <button type="button" aria-label="Citește în română" :aria-pressed="lang === 'ro'" :class="{ active: lang === 'ro' }" @click="setLang('ro')">RO</button>
         </div>
         <div class="container">
             <!-- About -->
-            <div id="about" class="section d-flex flex-column" style="justify-content: space-between">
+            <div id="about" class="section d-flex flex-column">
                 <div class="artifact d-flex"></div>
                 <v-card flat class="transparent d-flex">
                     <div class="d-flex flex-column mt-4 description" style="text-align: left">
                         <span>Ardelean Andrei P.F.A.<br></span>
                         <span>{{ t('svc') }}<br></span>
                         <span>{{ t('spec') }}</span>
-                        <span class="contact mt-3">{{ t('contact') }}: andrei@ardy.ro</span>
+                        <span class="contact mt-3">{{ t('contact') }}: <a class="contact-link" href="mailto:andrei@ardy.ro">andrei@ardy.ro</a></span>
                     </div>
                 </v-card>
             </div>
             <!-- Skills -->
-            <div id="skills" class="section d-flex"
-                style="overflow-y:hidden; overflow-x:hidden; padding-left:22px; flex-wrap:wrap; align-content:flex-start;">
+            <div id="skills" class="section d-flex">
+                <h2 class="skills-heading">{{ lang === 'ro' ? 'Competențe' : 'Skills' }}</h2>
                 <v-card flat class="transparent skills-container">
                     <span v-for="skill in t('skills')" :key="skill" class="badge-skill">{{ skill }}</span>
                 </v-card>
