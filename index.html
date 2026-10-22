@@ -29,6 +29,7 @@
             height: 100%;
             margin: 0;
             font-family: 'Raleway', sans-serif;
+            font-variant-numeric: lining-nums;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -146,6 +147,15 @@
             outline-offset: 3px;
         }
 
+        .site-footer {
+            padding: 12px 22px 0;
+            color: rgb(86, 86, 86);
+            font-size: 11px;
+            line-height: 1.6;
+            text-align: center;
+            overflow-wrap: anywhere;
+        }
+
         /* Stack before the two 380px cards run out of space. */
         @media (max-width: 850px) {
             html, body {
@@ -230,6 +240,13 @@
                 overflow: visible;
             }
 
+            .site-footer {
+                padding: 8px clamp(20px, 5vw, 32px) 0;
+                color: rgba(255, 255, 255, .8);
+                font-size: 12px;
+                text-align: left;
+            }
+
             .skills-heading {
                 display: block;
                 width: 100%;
@@ -288,7 +305,7 @@
                 <div class="artifact d-flex"></div>
                 <v-card flat class="transparent d-flex">
                     <div class="d-flex flex-column mt-4 description" style="text-align: left">
-                        <span>Ardelean Andrei P.F.A.<br></span>
+                        <span>Andrei Ardelean<br></span>
                         <span>{{ t('svc') }}<br></span>
                         <span>{{ t('spec') }}</span>
                         <span class="contact mt-3">{{ t('contact') }}: <a class="contact-link" href="mailto:andrei@ardy.ro">andrei@ardy.ro</a></span>
@@ -303,6 +320,7 @@
                 </v-card>
             </div>
         </div>
+        <footer class="site-footer">&copy; {{ year }} Andrei Ardelean &middot; 200 OK SRL</footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
@@ -311,6 +329,7 @@
             el: '#app',
             data: () => ({
                 lang: 'en',
+                year: new Date().getFullYear(),
                 messages: {
                     en: {
                         svc: 'Software Development & Consulting',
